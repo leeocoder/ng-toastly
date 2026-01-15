@@ -1,0 +1,135 @@
+/**
+ * Toastly CSS - Default styles with CSS variables for customization.
+ *
+ * Design inspired by shadcn/ui with a clean, modern appearance.
+ * All values are customizable via CSS variables.
+ *
+ * Usage:
+ * 1. Import this file in your global styles or component styles
+ * 2. Override CSS variables in :root or a parent element
+ *
+ * @example
+ * ```css
+ * :root {
+ *   --toastly-radius: 8px;
+ *   --toastly-success: #10b981;
+ * }
+ * ```
+ */
+
+/* ============================================================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ============================================================================ */
+
+:root {
+  /* Background & Text - Light Theme (default) */
+  --toastly-bg: #ffffff;
+  --toastly-text: #18181b;
+  --toastly-text-muted: #71717a;
+  --toastly-border: #e4e4e7;
+
+  /* Layout */
+  --toastly-radius: 12px;
+  --toastly-padding: 16px;
+  --toastly-gap: 12px;
+
+  /* Shadows */
+  --toastly-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --toastly-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* Type Colors */
+  --toastly-info: #7c3aed;
+  --toastly-success: #16a34a;
+  --toastly-warning: #f59e0b;
+  --toastly-danger: #dc2626;
+
+  /* Typography */
+  --toastly-font-family: inherit;
+  --toastly-font-size-title: 14px;
+  --toastly-font-size-message: 14px;
+  --toastly-font-weight-title: 600;
+  --toastly-font-weight-message: 400;
+  --toastly-line-height: 1.4;
+
+  /* Buttons */
+  --toastly-btn-radius: 6px;
+  --toastly-btn-padding: 6px 12px;
+  --toastly-btn-font-size: 14px;
+  --toastly-btn-font-weight: 500;
+
+  /* Animation */
+  --toastly-animation-duration: 300ms;
+
+  /* Progress Bar */
+  --toastly-progress-height: 4px;
+  --toastly-progress-bg: rgba(0, 0, 0, 0.1);
+  --toastly-progress-color: var(--toastly-info);
+}
+
+/* ============================================================================
+   DARK THEME OVERRIDES
+   ============================================================================ */
+
+.toastly-item--dark,
+[data-theme='dark'] .toastly-item,
+.dark .toastly-item {
+  --toastly-bg: #18181b;
+  --toastly-text: #fafafa;
+  --toastly-text-muted: #a1a1aa;
+  --toastly-border: #3f3f46;
+  --toastly-shadow: var(--toastly-shadow-dark);
+  --toastly-progress-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================================
+   UTILITY CLASSES FOR FRAMEWORK INTEGRATION
+   ============================================================================ */
+
+/**
+ * Use these classes to integrate with Tailwind, PrimeFlex, or custom systems.
+ */
+
+/* Size variants */
+.toastly-sm {
+  --toastly-padding: 12px;
+  --toastly-gap: 8px;
+  --toastly-font-size-title: 13px;
+  --toastly-font-size-message: 13px;
+}
+
+.toastly-lg {
+  --toastly-padding: 20px;
+  --toastly-gap: 16px;
+  --toastly-font-size-title: 16px;
+  --toastly-font-size-message: 15px;
+}
+
+/* Border radius variants */
+.toastly-rounded-none {
+  --toastly-radius: 0;
+}
+
+.toastly-rounded-sm {
+  --toastly-radius: 4px;
+}
+
+.toastly-rounded-lg {
+  --toastly-radius: 16px;
+}
+
+.toastly-rounded-full {
+  --toastly-radius: 9999px;
+}
+
+/* Shadow variants */
+.toastly-shadow-none {
+  --toastly-shadow: none;
+}
+
+.toastly-shadow-sm {
+  --toastly-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.toastly-shadow-lg {
+  --toastly-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}

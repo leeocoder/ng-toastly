@@ -75,6 +75,8 @@ export interface ToastPayload {
   readonly avatarUrl?: string;
   /** Progress value between 0 and 100 (undefined = no progress bar) */
   readonly progressPercent?: number;
+  /** Specific position for this toast (overrides global config) */
+  readonly position?: ToastPosition;
 }
 
 /**
@@ -100,4 +102,6 @@ export interface Toast extends Required<Pick<ToastPayload, 'message' | 'type' | 
   readonly avatarUrl?: string;
   /** Progress percentage */
   readonly progressPercent?: number;
+  /** Resolved position for this toast */
+  readonly position: ToastPosition;
 }

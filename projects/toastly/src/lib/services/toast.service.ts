@@ -263,6 +263,9 @@ export class ToastService {
     const toastType: ToastType = payload.type ?? this.globalConfig.defaultType;
     const durationMs = this.resolveDuration(payload.durationMs);
 
+    // Resolve position: Payload > Global Config
+    const position = payload.position ?? this.globalConfig.position;
+
     return {
       id: toastId,
       createdAt: Date.now(),
@@ -277,6 +280,7 @@ export class ToastService {
       iconTemplate: payload.iconTemplate,
       avatarUrl: payload.avatarUrl,
       progressPercent: payload.progressPercent,
+      position,
     };
   }
 
