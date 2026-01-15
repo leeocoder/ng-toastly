@@ -14,7 +14,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "ng-packagr:build",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "project": "projects/ng-toastly/ng-package.json"
           },
@@ -29,7 +29,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "ng-packagr:test",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ng-toastly/tsconfig.spec.json"
           }
