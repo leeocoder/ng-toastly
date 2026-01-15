@@ -1,6 +1,6 @@
 {
   "name": "ng-toastly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern, lightweight, and accessible toast notification library for Angular 17+ built with Signals and Standalone components.",
   "keywords": [
     "angular",
