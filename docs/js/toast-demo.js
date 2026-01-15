@@ -90,16 +90,11 @@ function dismissToast(id) {
   if (toast) {
     toast.classList.add('toastly-item--exiting');
     setTimeout(() => {
-<<<<<<< HEAD
-        if(toast.parentElement && toast.parentElement.children.length === 1) {
-            // Optional cleanup
-=======
         // Remove toast
         if(toast.parentElement && toast.parentElement.children.length === 1) {
             // Se for o último filho, talvez devêssemos remover o container também?
             // Não necessariamente, mas ajuda a limpar o DOM.
             // Por enquanto, apenas remove o toast.
->>>>>>> development
         }
         toast.remove();
     }, 300);
