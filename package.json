@@ -1,6 +1,7 @@
 {
   "name": "toastly",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,7 +21,6 @@
       }
     ]
   },
-  "private": true,
   "packageManager": "npm@11.6.2",
   "dependencies": {
     "@angular/common": "^21.0.0",
