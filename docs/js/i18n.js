@@ -38,6 +38,7 @@ const I18n = (() => {
       'nav.docs': 'Documentation',
       'nav.github': 'GitHub',
       'nav.startNow': 'Start Now',
+      'nav.advanced': 'Advanced',
 
       // Hero
       'hero.badge': 'Angular 17 - 21',
@@ -168,6 +169,117 @@ const I18n = (() => {
       'code.comment.lightTheme': '// Light theme (default)',
       'code.comment.darkTheme': '// Dark theme',
 
+      // Code Explanation
+      'code.explanation.title': 'Understanding the code line by line:',
+      'code.explanation.line': 'Line',
+      'code.explanation.action': 'What it does',
+      'code.explanation.inject': 'Gets an instance of the toast service. This is Angular\'s "dependency injection".',
+      'code.explanation.private': '<strong>private:</strong> only this component can access it. <strong>readonly:</strong> cannot be changed after creation.',
+      'code.explanation.success': 'Shows a "success" toast (with green check icon).',
+
+      // Errors
+      'errors.title': 'Common Errors',
+      'errors.lead': 'Problems you might encounter and how to solve them.',
+      'errors.q1': 'Toast does not appear on screen',
+      'errors.a1.cause': '<strong>Common cause:</strong> Forgot to add <code>&lt;toastly-container /&gt;</code>',
+      'errors.a1.solution': '<strong>Solution:</strong> Add the container to AppComponent template.',
+      'errors.q2': 'Toast appears without styles',
+      'errors.a2.cause': '<strong>Cause:</strong> CSS was not imported',
+      'errors.a2.solution': '<strong>Solution:</strong> Add <code>@import \'toastly/styles/toastly.css\';</code> to your styles.css',
+      'errors.q3': 'Error "Maximum number of toasts exceeded"',
+      'errors.a3.cause': '<strong>Cause:</strong> You are creating toasts too fast',
+      'errors.a3.solution': '<strong>Solution:</strong> Increase <code>maximumVisibleToasts</code> in global config or reduce creation frequency.',
+
+      // Global Config Options
+      'config.options.title': 'Global Configuration Options',
+      'config.options.option': 'Option',
+      'config.options.default': 'Default',
+      'config.options.description': 'Description',
+      'config.pos.desc': 'Position of toasts on screen',
+      'config.theme.desc': 'Default theme for all toasts',
+      'config.duration.desc': 'Default display time',
+      'config.max.desc': 'Maximum toasts visible at once',
+      'config.newest.desc': 'If new toasts appear on top of stack',
+      'config.pause.desc': 'If timer pauses on hover',
+      
+      // Config Descriptions (Table)
+      'config.desc.message': 'Main text of the toast (required)',
+      'config.desc.title': 'Bold title above the message',
+      'config.desc.type': 'Defines the color and icon',
+      'config.desc.theme': 'Visual theme (light or dark)',
+      'config.desc.duration': 'Time to close automatically (0 = never)',
+      'config.desc.dismissible': 'Whether to show the close (x) button',
+      'config.desc.styleClass': 'Custom CSS classes',
+      'config.desc.progress': 'Progress bar value (0-100)',
+
+      // Best Practices
+      'best.do.title': '✅ Do',
+      'best.do.1': 'Use short and direct messages',
+      'best.do.2': 'Reserve success for important actions',
+      'best.do.3': 'Use warning before destructive actions',
+      'best.do.4': 'Allow user to dismiss manually',
+      'best.do.5': 'Increase duration for long messages',
+      'best.dont.title': '❌ Avoid',
+      'best.dont.1': 'Toasts for every small action',
+      'best.dont.2': 'Very long messages',
+      'best.dont.3': 'More than 3 toasts at once',
+      'best.dont.4': 'Toasts that cannot be dismissed',
+      'best.dont.5': 'Using danger for simple validation errors',
+
+      // Technical Decisions
+      'tech.whySignals.title': 'Why Signals?',
+      'tech.whySignals.p1': 'We use Angular\'s <strong>Signals</strong> API because:',
+      'tech.whySignals.l1': '<strong>Performance:</strong> Signals are more efficient than BehaviorSubject',
+      'tech.whySignals.l2': '<strong>Simplicity:</strong> No need for <code>.subscribe()</code> and <code>.unsubscribe()</code>',
+      'tech.whySignals.l3': '<strong>Future:</strong> It\'s the direction Angular is heading',
+      'tech.whySignals.l4': '<strong>Fewer bugs:</strong> No memory leaks from forgotten subscriptions',
+
+      'tech.whyZeroDeps.title': 'Why zero dependencies?',
+      'tech.whyZeroDeps.p1': 'We decided not to use any external library because:',
+      'tech.whyZeroDeps.l1': '<strong>Fewer conflicts:</strong> No risk of incompatible versions',
+      'tech.whyZeroDeps.l2': '<strong>Smaller bundle:</strong> You only include what you really need',
+      'tech.whyZeroDeps.l3': '<strong>Maintenance:</strong> Fewer dependencies = fewer security updates',
+      'tech.whyZeroDeps.l4': '<strong>Control:</strong> We know exactly what each line of code does',
+
+      'tech.whySimple.title': 'Why "simple" code?',
+      'tech.whySimple.p1': 'Toastly code is intentionally simple and verbose because:',
+      'tech.whySimple.l1': '<strong>Readability:</strong> Any developer can understand and modify',
+      'tech.whySimple.l2': '<strong>Debugging:</strong> Errors are easy to find and fix',
+      'tech.whySimple.l3': '<strong>Learning:</strong> Interns and juniors can contribute with confidence',
+      'tech.whySimple.l4': '<strong>Maintenance:</strong> Clear code is easier to maintain long term',
+      'tech.whySimple.quote': '"Prefer code that an intern can debug at 2am over \'clever\' code that only the original author understands."',
+
+      'tech.whyDestroy.title': 'Why DestroyRef for timers?',
+      'tech.whyDestroy.p1': 'We use <code>DestroyRef</code> to ensure all <code>setTimeout</code> are cleaned up when the service is destroyed. This:',
+      'tech.whyDestroy.l1': 'Prevents memory leaks',
+      'tech.whyDestroy.l2': 'Avoids "component destroyed" errors in tests',
+      'tech.whyDestroy.l3': 'Is the modern Angular standard (replacing <code>OnDestroy</code>)',
+
+      // Custom Icons
+      'icons.title': 'Custom Icons',
+      'icons.lead': 'Use your own icons instead of the default ones. Works with any icon library, including <strong>Lucide Icons</strong>, <strong>FontAwesome</strong>, or custom SVGs.',
+      'icons.how.title': 'How does it work?',
+      'icons.how.desc': 'Toastly accepts a <code>TemplateRef</code> in the <code>iconTemplate</code> option. This allows you to pass any HTML/Angular content as an icon.',
+      'icons.step1.title': '1. Install Lucide Angular',
+      'icons.step2.title': '2. Create a template for the icon',
+      'icons.step2.desc': 'In your component, define an <code>ng-template</code> with the desired icon:',
+      'icons.why.title': '🤔 Why use TemplateRef?',
+      'icons.why.desc': 'Using <code>TemplateRef</code>, you have <strong>total control</strong> over the icon. You can use any icon library, add animations, or even complex components. We are not "tied" to a specific library.',
+      'icons.svg.title': 'Using direct SVG (no library)',
+      'icons.svg.desc': 'If you do not want to install an icon library, you can use inline SVG:',
+      'icons.diff.title': 'Different icons for each type',
+      'icons.diff.desc': 'You can create a service that returns the correct icon based on context:',
+      'icons.tip.title': '💡 Style Tip',
+      'icons.tip.desc': 'Default icons use <code>width: 20px</code> and <code>height: 20px</code>. To maintain visual consistency, use the same size in your custom icons. Use <code>color: currentColor</code> to inherit the toast color.',
+
+      // Themes
+      'themes.title': 'Themes (Light / Dark)',
+      'themes.lead': 'Each toast can have a light or dark theme, independent of the rest of the application.',
+      'themes.compare': 'Comparison',
+      'themes.tip.title': '💡 When to use dark theme?',
+      'themes.tip.desc': 'Dark theme is great for important notifications that need to stand out, especially in applications with light backgrounds. It pairs well with toasts that have action buttons.',
+
+
       // Position Demo
       'pos.topLeft': '↖️ Top Left',
       'pos.topCenter': '⬆️ Top Center',
@@ -208,6 +320,7 @@ const I18n = (() => {
       'nav.docs': 'Documentação',
       'nav.github': 'GitHub',
       'nav.startNow': 'Começar Agora',
+      'nav.advanced': 'Avançado',
 
       // Hero
       'hero.badge': 'Angular 17 - 21',
@@ -335,6 +448,117 @@ const I18n = (() => {
       'code.string.msgContent': "'João enviou uma mensagem'",
       'code.comment.lightTheme': '// Tema claro (padrão)',
       'code.comment.darkTheme': '// Tema escuro',
+
+      // Code Explanation
+      'code.explanation.title': 'Entendendo o código linha por linha:',
+      'code.explanation.line': 'Linha',
+      'code.explanation.action': 'O que faz',
+      'code.explanation.inject': 'Obtém uma instância do serviço de toasts. Isso é a "injeção de dependência" do Angular.',
+      'code.explanation.private': '<strong>private:</strong> só este componente pode acessar. <strong>readonly:</strong> não pode ser alterado depois de criado.',
+      'code.explanation.success': 'Mostra um toast do tipo "sucesso" (com ícone verde de check).',
+
+      // Errors
+      'errors.title': 'Erros Comuns',
+      'errors.lead': 'Problemas que você pode encontrar e como resolvê-los.',
+      'errors.q1': 'Toast não aparece na tela',
+      'errors.a1.cause': '<strong>Causa mais comum:</strong> Esqueceu de adicionar <code>&lt;toastly-container /&gt;</code>',
+      'errors.a1.solution': '<strong>Solução:</strong> Adicione o container no template do AppComponent.',
+      'errors.q2': 'Toast aparece sem estilos',
+      'errors.a2.cause': '<strong>Causa:</strong> CSS não foi importado',
+      'errors.a2.solution': '<strong>Solução:</strong> Adicione <code>@import \'toastly/styles/toastly.css\';</code> no seu styles.css',
+      'errors.q3': 'Erro "Maximum number of toasts exceeded"',
+      'errors.a3.cause': '<strong>Causa:</strong> Você está criando toasts muito rápido',
+      'errors.a3.solution': '<strong>Solução:</strong> Aumente <code>maximumVisibleToasts</code> na config global ou reduza a frequência de criação.',
+
+      // Global Config Options
+      'config.options.title': 'Opções de Configuração Global',
+      'config.options.option': 'Opção',
+      'config.options.default': 'Padrão',
+      'config.options.description': 'Descrição',
+      'config.pos.desc': 'Posição dos toasts na tela',
+      'config.theme.desc': 'Tema padrão para todos os toasts',
+      'config.duration.desc': 'Tempo padrão de exibição',
+      'config.max.desc': 'Máximo de toasts visíveis ao mesmo tempo',
+      'config.newest.desc': 'Se novos toasts aparecem no topo da pilha',
+      'config.pause.desc': 'Se pausa o timer ao passar o mouse',
+
+      // Config Descriptions (Table)
+      'config.desc.message': 'Texto principal do toast (obrigatório)',
+      'config.desc.title': 'Título em negrito acima da mensagem',
+      'config.desc.type': 'Define a cor e ícone do toast',
+      'config.desc.theme': 'Tema visual (claro ou escuro)',
+      'config.desc.duration': 'Tempo até fechar automaticamente (0 = nunca)',
+      'config.desc.dismissible': 'Se mostra o botão (x) para fechar',
+      'config.desc.styleClass': 'Classes CSS customizadas',
+      'config.desc.progress': 'Valor da barra de progresso (0-100)',
+
+      // Best Practices
+      'best.do.title': '✅ Faça',
+      'best.do.1': 'Use mensagens curtas e diretas',
+      'best.do.2': 'Reserve success para ações importantes',
+      'best.do.3': 'Use warning antes de ações destrutivas',
+      'best.do.4': 'Permita que o usuário feche manualmente',
+      'best.do.5': 'Aumente a duração para mensagens longas',
+      'best.dont.title': '❌ Evite',
+      'best.dont.1': 'Toasts para cada pequena ação',
+      'best.dont.2': 'Mensagens muito longas',
+      'best.dont.3': 'Mais de 3 toasts ao mesmo tempo',
+      'best.dont.4': 'Toasts que não podem ser fechados',
+      'best.dont.5': 'Usar danger para erros de validação simples',
+
+      // Technical Decisions
+      'tech.whySignals.title': 'Por que Signals?',
+      'tech.whySignals.p1': 'Usamos a API de <strong>Signals</strong> do Angular porque:',
+      'tech.whySignals.l1': '<strong>Performance:</strong> Signals são mais eficientes que BehaviorSubject',
+      'tech.whySignals.l2': '<strong>Simplicidade:</strong> Não precisa de <code>.subscribe()</code> e <code>.unsubscribe()</code>',
+      'tech.whySignals.l3': '<strong>Futuro:</strong> É a direção que o Angular está seguindo',
+      'tech.whySignals.l4': '<strong>Menos bugs:</strong> Sem memory leaks de subscriptions esquecidas',
+
+      'tech.whyZeroDeps.title': 'Por que zero dependências?',
+      'tech.whyZeroDeps.p1': 'Decidimos não usar nenhuma biblioteca externa porque:',
+      'tech.whyZeroDeps.l1': '<strong>Menos conflitos:</strong> Não há risco de versões incompatíveis',
+      'tech.whyZeroDeps.l2': '<strong>Bundle menor:</strong> Você só inclui o que realmente precisa',
+      'tech.whyZeroDeps.l3': '<strong>Manutenção:</strong> Menos dependências = menos atualizações de segurança',
+      'tech.whyZeroDeps.l4': '<strong>Controle:</strong> Sabemos exatamente o que cada linha de código faz',
+
+      'tech.whySimple.title': 'Por que código "simples"?',
+      'tech.whySimple.p1': 'O código do Toastly é intencionalmente simples e verboso porque:',
+      'tech.whySimple.l1': '<strong>Legibilidade:</strong> Qualquer desenvolvedor consegue entender e modificar',
+      'tech.whySimple.l2': '<strong>Debugging:</strong> Erros são fáceis de encontrar e corrigir',
+      'tech.whySimple.l3': '<strong>Aprendizado:</strong> Estagiários e juniors podem contribuir com confiança',
+      'tech.whySimple.l4': '<strong>Manutenção:</strong> Código claro é mais fácil de manter a longo prazo',
+      'tech.whySimple.quote': '"Prefira código que um estagiário consegue debugar às 2h da manhã do que código \'esperto\' que só o autor original entende."',
+
+      'tech.whyDestroy.title': 'Por que DestroyRef para timers?',
+      'tech.whyDestroy.p1': 'Usamos <code>DestroyRef</code> para garantir que todos os <code>setTimeout</code> são limpos quando o serviço é destruído. Isso:',
+      'tech.whyDestroy.l1': 'Previne memory leaks',
+      'tech.whyDestroy.l2': 'Evita erros de "component destroyed" em testes',
+      'tech.whyDestroy.l3': 'É o padrão moderno do Angular (substituindo <code>OnDestroy</code>)',
+
+      // Custom Icons
+      'icons.title': 'Ícones Customizados',
+      'icons.lead': 'Use seus próprios ícones em vez dos ícones padrão. Funciona com qualquer biblioteca de ícones, incluindo <strong>Lucide Icons</strong>, <strong>FontAwesome</strong>, ou SVGs customizados.',
+      'icons.how.title': 'Como funciona?',
+      'icons.how.desc': 'O Toastly aceita um <code>TemplateRef</code> na opção <code>iconTemplate</code>. Isso permite que você passe qualquer conteúdo HTML/Angular como ícone.',
+      'icons.step1.title': '1. Instale o Lucide Angular',
+      'icons.step2.title': '2. Crie um template para o ícone',
+      'icons.step2.desc': 'No seu componente, defina um <code>ng-template</code> com o ícone desejado:',
+      'icons.why.title': '🤔 Por que usar TemplateRef?',
+      'icons.why.desc': 'Usando <code>TemplateRef</code>, você tem <strong>controle total</strong> sobre o ícone. Pode usar qualquer biblioteca de ícones, adicionar animações, ou até componentes complexos. Não ficamos "amarrados" a uma biblioteca específica.',
+      'icons.svg.title': 'Usando SVG direto (sem biblioteca)',
+      'icons.svg.desc': 'Se você não quer instalar uma biblioteca de ícones, pode usar SVG inline:',
+      'icons.diff.title': 'Ícones diferentes para cada tipo',
+      'icons.diff.desc': 'Você pode criar um serviço que retorna o ícone correto baseado no contexto:',
+      'icons.tip.title': '💡 Dica de estilo',
+      'icons.tip.desc': 'Os ícones padrão usam <code>width: 20px</code> e <code>height: 20px</code>. Para manter a consistência visual, use o mesmo tamanho nos seus ícones customizados. Use <code>color: currentColor</code> para herdar a cor do toast.',
+
+      // Themes
+      'themes.title': 'Temas (Light / Dark)',
+      'themes.lead': 'Cada toast pode ter tema claro ou escuro, independente do resto da aplicação.',
+      'themes.compare': 'Comparação',
+      'themes.tip.title': '💡 Quando usar o tema dark?',
+      'themes.tip.desc': 'O tema escuro é ótimo para notificações importantes que precisam se destacar, especialmente em aplicações com fundo claro. Combina bem com toasts que têm botões de ação.',
+
 
       // Position Demo
       'pos.topLeft': '↖️ Superior esquerdo',
