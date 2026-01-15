@@ -15,8 +15,8 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "toastly": [
-        "./dist/toastly"
+      "ng-toastly": [
+        "./dist/ng-toastly"
       ]
     }
   },

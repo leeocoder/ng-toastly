@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/toastly/toastly/main/docs/assets/toastly-logo.png" alt="Toastly Logo" width="120" />
+  <img src="https://raw.githubusercontent.com/leeocoder/toastly/main/docs/assets/toastly-logo.png" alt="Toastly Logo" width="120" />
   <h1>Toastly</h1>
   <p><strong>Modern, Lightweight, and Type-Safe Toast Notifications for Angular.</strong></p>
 
@@ -59,13 +59,13 @@ If you want to contribute to Toastly or run it locally, follow these steps.
 1.  **Clone the repo**
 
     ```bash
-    git clone https://github.com/toastly/toastly.git
+    git clone https://github.com/leeocoder/toastly.git
     cd toastly
     ```
 
 2.  **Install dependencies**
     ```bash
-    npm install
+    npm install ng-toastly
     ```
 
 ### Running the Library (Watch Mode)

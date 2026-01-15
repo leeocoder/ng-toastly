@@ -1,9 +1,10 @@
 {
-  "name": "toastly",
+  "name": "ng-toastly",
   "version": "1.0.0",
   "description": "A modern, lightweight, and accessible toast notification library for Angular 17+ built with Signals and Standalone components.",
   "keywords": [
     "angular",
+    "ng-toastly",
     "toast",
     "notifications",
     "alert",
@@ -14,19 +15,24 @@
     "signals",
     "standalone",
     "a11y",
-    "ui-component"
+    "accessibility",
+    "web-components",
+    "ui-library",
+    "design-system",
+    "typescript"
   ],
   "author": {
     "name": "Leonardo Albuquerque",
-    "email": "leo@example.com"
+    "email": "leoplay2007@hotmail.com",
+    "url": "https://github.com/leeocoder"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toastly/toastly"
+    "url": "https://github.com/leeocoder/toastly"
   },
   "bugs": {
-    "url": "https://github.com/toastly/toastly/issues"
+    "url": "https://github.com/leeocoder/toastly/issues"
   },
   "homepage": "https://toastly.dev",
   "peerDependencies": {

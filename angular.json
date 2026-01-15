@@ -7,28 +7,31 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "toastly": {
+    "ng-toastly": {
       "projectType": "library",
-      "root": "projects/toastly",
-      "sourceRoot": "projects/toastly/src",
+      "root": "projects/ng-toastly",
+      "sourceRoot": "projects/ng-toastly/src",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular/build:ng-packagr",
+          "builder": "ng-packagr:build",
+          "options": {
+            "project": "projects/ng-toastly/ng-package.json"
+          },
           "configurations": {
             "production": {
-              "tsConfig": "projects/toastly/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ng-toastly/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/toastly/tsconfig.lib.json"
+              "tsConfig": "projects/ng-toastly/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:unit-test",
+          "builder": "ng-packagr:test",
           "options": {
-            "tsConfig": "projects/toastly/tsconfig.spec.json"
+            "tsConfig": "projects/ng-toastly/tsconfig.spec.json"
           }
         }
       }
