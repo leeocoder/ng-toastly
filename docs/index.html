@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Toastly - Biblioteca de notificações toast para Angular 17-21. Sem dependências, totalmente customizável, acessível e fácil de usar."
+    />
+    <title>Toastly - Toast Notifications para Angular</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Lucide Icons for high-quality icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  </head>
+  <body>
+    <!-- Navegação -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="/" class="logo">
+          <span class="logo-icon">🍞</span>
+          <span class="logo-text">Toastly</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">Recursos</a></li>
+          <li><a href="#getting-started">Começar</a></li>
+          <li><a href="docs.html">Documentação</a></li>
+          <li><a href="https://github.com/toastly/toastly" target="_blank">GitHub</a></li>
+        </ul>
+        <a href="#getting-started" class="btn btn-primary">Começar Agora</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">Angular 17 - 21</span>
+          <h1 class="hero-title">
+            Notificações toast<br />
+            <span class="text-gradient">simples e elegantes</span>
+          </h1>
+          <p class="hero-description">
+            Uma biblioteca de toast notifications para Angular, construída com foco em
+            <strong>simplicidade</strong>, <strong>acessibilidade</strong> e
+            <strong>zero dependências externas</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="#getting-started" class="btn btn-primary btn-lg">
+              Começar Agora
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="docs.html" class="btn btn-secondary btn-lg">Ver Documentação</a>
+          </div>
+        </div>
+
+        <!-- Preview Card -->
+        <div class="hero-preview">
+          <div class="preview-card">
+            <div class="preview-header">
+              <span class="preview-dot"></span>
+              <span class="preview-dot"></span>
+              <span class="preview-dot"></span>
+            </div>
+            <div class="preview-content">
+              <!-- Toast Examples -->
+              <div class="toast-example toast-success">
+                <div class="toast-icon">
+                  <i data-lucide="check-circle"></i>
+                </div>
+                <div class="toast-text">
+                  <div class="toast-title">Alterações salvas</div>
+                  <div class="toast-message">Seu perfil foi atualizado com sucesso.</div>
+                </div>
+                <button class="toast-close"><i data-lucide="x"></i></button>
+              </div>
+
+              <div class="toast-example toast-dark">
+                <div class="toast-icon">
+                  <i data-lucide="info"></i>
+                </div>
+                <div class="toast-text">
+                  <div class="toast-title">Nova atualização disponível</div>
+                  <div class="toast-message">Versão 4.2 inclui melhorias de performance.</div>
+                </div>
+                <div class="toast-actions">
+                  <button class="toast-btn toast-btn-secondary">Pular</button>
+                  <button class="toast-btn toast-btn-primary">Instalar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Por que Toastly?</span>
+          <h2 class="section-title">Tudo que você precisa,<br />nada que você não precisa</h2>
+          <p class="section-description">
+            Desenvolvida com foco em simplicidade e clareza de código.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Zero Dependências</h3>
+            <p class="feature-description">
+              Apenas Angular como peer dependency. Sem bibliotecas externas, sem conflitos de
+              versão, sem surpresas.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Signals Nativos</h3>
+            <p class="feature-description">
+              Construída com a API de Signals do Angular. Estado reativo, performático e sem RxJS
+              desnecessário.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Memory Safe</h3>
+            <p class="feature-description">
+              Todos os timers são limpos automaticamente. Sem memory leaks, sem efeitos colaterais,
+              sem surpresas.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Acessível</h3>
+            <p class="feature-description">
+              ARIA live regions para leitores de tela. Respeita preferências de movimento reduzido
+              automaticamente.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Totalmente Customizável</h3>
+            <p class="feature-description">
+              CSS variables para tudo. Funciona com Tailwind, PrimeFlex ou CSS puro. Você decide o
+              visual.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Código Legível</h3>
+            <p class="feature-description">
+              Escrita para ser entendida por qualquer desenvolvedor. Sem truques, sem mágica, sem
+              abreviações.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="playground" class="playground">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Experimente!</span>
+          <h2 class="section-title">Teste os toasts agora</h2>
+          <p class="section-description">
+            Clique nos botões abaixo para ver os toasts em ação.
+          </p>
+        </div>
+
+        <div class="playground-container">
+          <div class="playground-card">
+            <h3>Tipos de Toast</h3>
+            <p>Escolha um tipo para visualizar</p>
+            
+            <div class="demo-buttons">
+              <button class="demo-btn demo-btn-info" onclick="showToast('info')">
+                <i data-lucide="info" class="demo-icon"></i>
+                Info
+              </button>
+              
+              <button class="demo-btn demo-btn-success" onclick="showToast('success')">
+                <i data-lucide="check-circle" class="demo-icon"></i>
+                Success
+              </button>
+              
+              <button class="demo-btn demo-btn-warning" onclick="showToast('warning')">
+                <i data-lucide="alert-triangle" class="demo-icon"></i>
+                Warning
+              </button>
+              
+              <button class="demo-btn demo-btn-danger" onclick="showToast('danger')">
+                <i data-lucide="x-circle" class="demo-icon"></i>
+                Danger
+              </button>
+            </div>
+          </div>
+
+          <div class="playground-card">
+            <h3>Variações</h3>
+            <p>Experimente diferentes configurações</p>
+            
+            <div class="demo-buttons demo-buttons-alt">
+              <button class="demo-btn demo-btn-dark" onclick="showToast('dark')">
+                <i data-lucide="moon" class="demo-icon"></i>
+                Tema Dark
+              </button>
+              
+              <button class="demo-btn demo-btn-action" onclick="showToast('action')">
+                <i data-lucide="pointer" class="demo-icon"></i>
+                Com Ações
+              </button>
+              
+              <button class="demo-btn demo-btn-progress" onclick="showToast('progress')">
+                <i data-lucide="loader" class="demo-icon"></i>
+                Com Progresso
+              </button>
+              
+              <button class="demo-btn demo-btn-avatar" onclick="showToast('avatar')">
+                <i data-lucide="user" class="demo-icon"></i>
+                Com Avatar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toast Container for Demo -->
+    <div id="toast-container" class="toast-container-demo"></div>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="getting-started">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Primeiros Passos</span>
+          <h2 class="section-title">Comece em 3 minutos</h2>
+          <p class="section-description">Instalação simples, uso intuitivo.</p>
+        </div>
+
+        <div class="steps">
+          <!-- Step 1 -->
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 class="step-title">Instale a biblioteca</h3>
+              <p class="step-description">
+                Execute este comando no terminal, dentro do seu projeto Angular:
+              </p>
+              <div class="code-block">
+                <div class="code-header">
+                  <span>Terminal</span>
+                  <button class="copy-btn" data-copy="npm install toastly">Copiar</button>
+                </div>
+                <pre><code>npm install toastly</code></pre>
+              </div>
+              <div class="step-note">
+                <strong>💡 O que isso faz?</strong> Baixa a biblioteca Toastly e adiciona como
+                dependência no seu <code>package.json</code>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3 class="step-title">Adicione o container</h3>
+              <p class="step-description">
+                O container é onde os toasts aparecem. Adicione no seu componente principal:
+              </p>
+              <div class="code-block">
+                <div class="code-header">
+                  <span>app.component.ts</span>
+                  <button class="copy-btn">Copiar</button>
+                </div>
+                <pre><code><span class="code-keyword">import</span> { Component } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
+<span class="code-keyword">import</span> { ToastContainerComponent } <span class="code-keyword">from</span> <span class="code-string">'toastly'</span>;
+
+<span class="code-decorator">@Component</span>({
+  selector: <span class="code-string">'app-root'</span>,
+  imports: [ToastContainerComponent],
+  template: <span class="code-string">`
+    &lt;router-outlet /&gt;
+    
+    &lt;!-- Adicione esta linha --&gt;
+    &lt;toastly-container /&gt;
+  `</span>,
+})
+<span class="code-keyword">export class</span> <span class="code-class">AppComponent</span> {}</code></pre>
+              </div>
+              <div class="step-note">
+                <strong>💡 Por que no componente principal?</strong> Assim os toasts aparecem em
+                qualquer página da sua aplicação.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3 class="step-title">Mostre seu primeiro toast!</h3>
+              <p class="step-description">
+                Use o <code>ToastService</code> em qualquer componente para mostrar notificações:
+              </p>
+              <div class="code-block">
+                <div class="code-header">
+                  <span>meu-componente.ts</span>
+                  <button class="copy-btn">Copiar</button>
+                </div>
+                <pre><code><span class="code-keyword">import</span> { inject } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
+<span class="code-keyword">import</span> { ToastService } <span class="code-keyword">from</span> <span class="code-string">'toastly'</span>;
+
+<span class="code-keyword">export class</span> <span class="code-class">MeuComponente</span> {
+  <span class="code-comment">// Injeta o serviço de toasts</span>
+  <span class="code-keyword">private readonly</span> toastService = inject(ToastService);
+
+  salvarDados(): <span class="code-keyword">void</span> {
+    <span class="code-comment">// Mostra um toast de sucesso!</span>
+    <span class="code-keyword">this</span>.toastService.success(<span class="code-string">'Dados salvos com sucesso!'</span>);
+  }
+}</code></pre>
+              </div>
+              <div class="step-note">
+                <strong>🎉 Pronto!</strong> Seu toast já está funcionando. Continue lendo a
+                documentação para customizações.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-box">
+          <h3>Quer aprender mais?</h3>
+          <p>A documentação completa tem exemplos, customizações e boas práticas.</p>
+          <a href="docs.html" class="btn btn-primary btn-lg">Ver Documentação Completa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Dúvidas?</span>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Funciona com Angular 17, 18, 19, 20 e 21?</summary>
+            <p class="faq-answer">
+              Sim! A biblioteca é compilada com <code>compilationMode: "partial"</code>, o que
+              permite que funcione em qualquer versão do Angular entre 17 e 21. Você não precisa se
+              preocupar com compatibilidade.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Preciso instalar alguma outra dependência?</summary>
+            <p class="faq-answer">
+              Não! Toastly tem <strong>zero dependências externas</strong>. Apenas Angular como peer
+              dependency. Isso significa menos conflitos, builds menores e manutenção mais fácil.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Funciona com Tailwind CSS?</summary>
+            <p class="faq-answer">
+              Sim! Você pode passar classes CSS personalizadas através do parâmetro
+              <code>styleClass</code>. Funciona com Tailwind, PrimeFlex, Bootstrap ou qualquer
+              framework CSS.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Os timers são limpos automaticamente?</summary>
+            <p class="faq-answer">
+              Sim! Todos os timers de auto-dismiss são armazenados em um Map e limpos
+              automaticamente quando o toast é removido ou quando o serviço é destruído. Isso
+              previne memory leaks.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">É acessível para leitores de tela?</summary>
+            <p class="faq-answer">
+              Sim! O container usa <code>aria-live="polite"</code> para anunciar novos toasts para
+              leitores de tela. Toasts de warning e danger usam <code>role="alert"</code>. Animações
+              são desabilitadas automaticamente quando o usuário tem
+              <code>prefers-reduced-motion</code> ativado.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="logo-icon">🍞</span>
+            <span class="logo-text">Toastly</span>
+            <p>Toast notifications para Angular, do jeito certo.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Documentação</h4>
+              <ul>
+                <li><a href="docs.html#instalacao">Instalação</a></li>
+                <li><a href="docs.html#tipos">Tipos de Toast</a></li>
+                <li><a href="docs.html#css-variables">Customização</a></li>
+                <li><a href="docs.html#boas-praticas">Boas Práticas</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Recursos</h4>
+              <ul>
+                <li><a href="https://github.com/toastly/toastly">GitHub</a></li>
+                <li><a href="https://npm.im/toastly">npm</a></li>
+                <li><a href="docs.html#decisoes">Decisões Técnicas</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Feito com ❤️ para a comunidade Angular</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Copy button functionality
+      document.querySelectorAll('.copy-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+          const codeBlock = button.closest('.code-block');
+          const code = codeBlock.querySelector('code').textContent;
+          navigator.clipboard.writeText(code);
+          button.textContent = 'Copiado!';
+          setTimeout(() => (button.textContent = 'Copiar'), 2000);
+        });
+      });
+
+      // Toast Demo Functionality
+      let toastId = 0;
+      const container = document.getElementById('toast-container');
+
+      const toastConfig = {
+        info: {
+          title: 'Nova atualização',
+          message: 'Versão 4.2 disponível com novas funcionalidades.',
+          lucideIcon: 'info',
+          color: '#7c3aed'
+        },
+        success: {
+          title: 'Alterações salvas',
+          message: 'Seu perfil foi atualizado com sucesso.',
+          lucideIcon: 'check-circle',
+          color: '#16a34a'
+        },
+        warning: {
+          title: 'Atenção necessária',
+          message: 'Sua sessão expira em 5 minutos.',
+          lucideIcon: 'alert-triangle',
+          color: '#f59e0b'
+        },
+        danger: {
+          title: 'Erro ao conectar',
+          message: 'Não foi possível conectar ao servidor.',
+          lucideIcon: 'x-circle',
+          color: '#dc2626'
+        },
+        dark: {
+          title: 'Modo escuro ativado',
+          message: 'O tema dark está aplicado ao toast.',
+          lucideIcon: 'moon',
+          color: '#a78bfa',
+          theme: 'dark'
+        },
+        action: {
+          title: 'Atualização disponível',
+          message: 'Deseja instalar a nova versão agora?',
+          lucideIcon: 'refresh-cw',
+          color: '#7c3aed',
+          theme: 'dark',
+          hasActions: true
+        },
+        progress: {
+          title: 'Enviando arquivo...',
+          message: 'dados.xlsx está sendo enviado.',
+          lucideIcon: 'upload-cloud',
+          color: '#7c3aed',
+          hasProgress: true
+        },
+        avatar: {
+          title: 'Nova mensagem',
+          message: 'João Oliveira te enviou uma mensagem.',
+          hasAvatar: true
+        }
+      };
+
+      function showToast(type) {
+        const config = toastConfig[type];
+        const id = ++toastId;
+        const isDark = config.theme === 'dark';
+
+        const toast = document.createElement('div');
+        toast.className = `toast-demo ${isDark ? 'toast-demo--dark' : ''}`;
+        toast.id = `toast-${id}`;
+        
+        let content = '';
+        
+        // Avatar or Icon
+        if (config.hasAvatar) {
+          content += `
+            <img 
+              src="https://api.dicebear.com/7.x/avataaars/svg?seed=${id}" 
+              class="toast-demo__avatar" 
+              alt=""
+            />
+          `;
+        } else {
+          content += `
+            <div class="toast-demo__icon" style="color: ${config.color}">
+              <i data-lucide="${config.lucideIcon}"></i>
+            </div>
+          `;
+        }
+
+        // Text
+        content += `
+          <div class="toast-demo__text">
+            <div class="toast-demo__title">${config.title}</div>
+            <div class="toast-demo__message">${config.message}</div>
+          </div>
+        `;
+
+        // Close button
+        content += `
+          <button class="toast-demo__close" onclick="dismissToast(${id})">
+            <i data-lucide="x"></i>
+          </button>
+        `;
+
+        toast.innerHTML = `<div class="toast-demo__content">${content}</div>`;
+
+        // Progress bar
+        if (config.hasProgress) {
+          toast.innerHTML += `
+            <div class="toast-demo__progress-track">
+              <div class="toast-demo__progress-bar" id="progress-${id}"></div>
+            </div>
+          `;
+        }
+
+        // Action buttons
+        if (config.hasActions) {
+          toast.innerHTML += `
+            <div class="toast-demo__actions">
+              <button class="toast-demo__action toast-demo__action--secondary" onclick="dismissToast(${id})">
+                Depois
+              </button>
+              <button class="toast-demo__action toast-demo__action--primary" onclick="dismissToast(${id})">
+                Atualizar
+              </button>
+            </div>
+          `;
+        }
+
+        container.appendChild(toast);
+        
+        // Initialize Lucide icons in the new toast (must call after adding to DOM)
+        lucide.createIcons();
+
+        // Start progress animation after DOM update
+        if (config.hasProgress) {
+          requestAnimationFrame(() => animateProgress(id));
+        }
+
+        // Auto-dismiss after 5 seconds (except action toasts)
+        if (!config.hasActions && !config.hasProgress) {
+          setTimeout(() => dismissToast(id), 5000);
+        }
+      }
+
+      function dismissToast(id) {
+        const toast = document.getElementById(`toast-${id}`);
+        if (toast) {
+          toast.classList.add('toast-demo--exiting');
+          setTimeout(() => toast.remove(), 300);
+        }
+      }
+
+      function animateProgress(id) {
+        let progress = 0;
+        const bar = document.getElementById(`progress-${id}`);
+        
+        if (!bar) return;
+        
+        const interval = setInterval(() => {
+          progress += 1;
+          bar.style.width = `${progress}%`;
+          
+          if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => dismissToast(id), 800);
+          }
+        }, 50);
+      }
+
+      // Initialize Lucide icons after DOM is ready
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>
