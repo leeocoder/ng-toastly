@@ -29,6 +29,8 @@ export type {
 
 export { TOAST_GLOBAL_CONFIG } from './lib/types/toast-config.type';
 
+export { provideToastly } from './lib/provide-toast';
+
 export type {
   ToastError,
   ToastErrorCode,

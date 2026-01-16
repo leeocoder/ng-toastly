@@ -1,128 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Complete Toastly documentation - Learn to use, customize, and understand the technical decisions of the library.">
-  <title>Documentation | Toastly</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="docs.css">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <!-- Theme Manager (load early to prevent flash) -->
-  <script src="js/theme.js"></script>
-</head>
-<body>
-  <!-- Navigation -->
-  <header class="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">🍞</span>
-        <span class="logo-text">Toastly</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="#instalacao" data-i18n="footer.installation">Installation</a></li>
-        <li><a href="#tipos" data-i18n="footer.toastTypes">Types</a></li>
-        <li><a href="#css-variables" data-i18n="footer.customization">Customization</a></li>
-        <li><a href="https://github.com/leeocoder/ng-toastly" target="_blank" data-i18n="nav.github">GitHub</a></li>
-      </ul>
-      
-      <!-- Header Controls -->
-      <div class="header-controls">
-        <!-- Language Switcher -->
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">
-            🇺🇸 EN
-          </button>
-          <button class="lang-btn" data-lang="pt-br" onclick="setLanguage('pt-br')">
-            🇧🇷 PT
-          </button>
-        </div>
-        
-        <!-- Theme Toggle -->
-        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-          <i data-lucide="sun" class="theme-icon-light"></i>
-          <i data-lucide="moon" class="theme-icon-dark"></i>
-        </button>
-      </div>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Complete Toastly documentation - Learn to use, customize, and understand the technical decisions of the library."
+    />
+    <title>Documentation | Toastly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="docs.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- Theme Manager (load early to prevent flash) -->
+    <script src="js/theme.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🍞</span>
+          <span class="logo-text">Toastly</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="#instalacao" data-i18n="footer.installation">Installation</a></li>
+          <li><a href="#tipos" data-i18n="footer.toastTypes">Types</a></li>
+          <li><a href="#css-variables" data-i18n="footer.customization">Customization</a></li>
+          <li>
+            <a href="https://github.com/leeocoder/ng-toastly" target="_blank" data-i18n="nav.github"
+              >GitHub</a
+            >
+          </li>
+        </ul>
 
-  <div class="docs-layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <nav class="sidebar-nav">
-        <div class="sidebar-section">
-          <h3 data-i18n="start.badge">Getting Started</h3>
-          <ul>
-            <li><a href="#instalacao" data-i18n="footer.installation">Installation</a></li>
-            <li><a href="#primeiro-toast" data-i18n="start.step3.title">Your First Toast</a></li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h3 data-i18n="nav.features">Usage</h3>
-          <ul>
-            <li><a href="#tipos" data-i18n="footer.toastTypes">Toast Types</a></li>
-            <li><a href="#opcoes" data-i18n="config.options.title">Available Options</a></li>
-            <li><a href="#posicao" data-i18n="config.pos.desc">Positioning</a></li>
-            <li><a href="#acoes" data-i18n="playground.btn.actions">Action Buttons</a></li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h3 data-i18n="footer.customization">Customization</h3>
-          <ul>
-            <li><a href="#css-variables" data-i18n="footer.customization">CSS Variables</a></li>
-            <li><a href="#classes-css" data-i18n="features.customizable.title">Custom CSS</a></li>
-            <li><a href="#icones" data-i18n="icons.title">Custom Icons</a></li>
-            <li><a href="#temas" data-i18n="themes.title">Themes</a></li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h3 data-i18n="nav.advanced">Advanced</h3>
-          <ul>
-            <li><a href="#config-global" data-i18n="config.options.title">Global Config</a></li>
-            <li><a href="#boas-praticas" data-i18n="footer.bestPractices">Best Practices</a></li>
-            <li><a href="#erros-comuns" data-i18n="errors.title">Common Errors</a></li>
-            <li><a href="#decisoes" data-i18n="footer.technicalDecisions">Technical Decisions</a></li>
-          </ul>
+        <!-- Header Controls -->
+        <div class="header-controls">
+          <!-- Language Switcher -->
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" data-lang="pt-br" onclick="setLanguage('pt-br')">🇧🇷 PT</button>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <i data-lucide="sun" class="theme-icon-light"></i>
+            <i data-lucide="moon" class="theme-icon-dark"></i>
+          </button>
         </div>
       </nav>
-    </aside>
+    </header>
 
-    <!-- Main Content -->
-    <main class="docs-content">
-      <!-- Installation -->
-      <section id="instalacao" class="docs-section">
-        <h1 data-i18n="footer.installation">Installation</h1>
-        <p class="lead" data-i18n="start.title">
-          Start in 3 minutes
-        </p>
-
-        <h2 data-i18n="start.step1.title">Install the library</h2>
-        <p data-i18n="start.step1.description">Run this command in your terminal, inside your Angular project:</p>
-        <div class="code-block">
-          <div class="code-header">
-            <span>Terminal</span>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="docs-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <div class="sidebar-section">
+            <h3 data-i18n="start.badge">Getting Started</h3>
+            <ul>
+              <li><a href="#instalacao" data-i18n="footer.installation">Installation</a></li>
+              <li><a href="#primeiro-toast" data-i18n="start.step3.title">Your First Toast</a></li>
+            </ul>
           </div>
-          <pre><code>npm install ng-toastly</code></pre>
-        </div>
-        <div class="info-box">
-          <p data-i18n="start.step1.note">💡 What does this do?</p>
-        </div>
-
-        <h2 data-i18n="start.step2.title">Add the container</h2>
-        <p data-i18n="start.step2.description">The container is where toasts appear. Add it to your main component:</p>
-        <div class="code-block">
-          <div class="code-header">
-            <span>app.component.ts</span>
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+          <div class="sidebar-section">
+            <h3 data-i18n="nav.features">Usage</h3>
+            <ul>
+              <li><a href="#tipos" data-i18n="footer.toastTypes">Toast Types</a></li>
+              <li><a href="#opcoes" data-i18n="config.options.title">Available Options</a></li>
+              <li><a href="#posicao" data-i18n="config.pos.desc">Positioning</a></li>
+              <li><a href="#acoes" data-i18n="playground.btn.actions">Action Buttons</a></li>
+            </ul>
           </div>
-          <pre><code><span class="code-keyword">import</span> { Component } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
+          <div class="sidebar-section">
+            <h3 data-i18n="footer.customization">Customization</h3>
+            <ul>
+              <li><a href="#css-variables" data-i18n="footer.customization">CSS Variables</a></li>
+              <li><a href="#classes-css" data-i18n="features.customizable.title">Custom CSS</a></li>
+              <li><a href="#icones" data-i18n="icons.title">Custom Icons</a></li>
+              <li><a href="#temas" data-i18n="themes.title">Themes</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <h3 data-i18n="nav.advanced">Advanced</h3>
+            <ul>
+              <li><a href="#config-global" data-i18n="config.options.title">Global Config</a></li>
+              <li><a href="#boas-praticas" data-i18n="footer.bestPractices">Best Practices</a></li>
+              <li><a href="#erros-comuns" data-i18n="errors.title">Common Errors</a></li>
+              <li>
+                <a href="#decisoes" data-i18n="footer.technicalDecisions">Technical Decisions</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="docs-content">
+        <!-- Installation -->
+        <section id="instalacao" class="docs-section">
+          <h1 data-i18n="footer.installation">Installation</h1>
+          <p class="lead" data-i18n="start.title">Start in 3 minutes</p>
+
+          <h2 data-i18n="start.step1.title">Install the library</h2>
+          <p data-i18n="start.step1.description">
+            Run this command in your terminal, inside your Angular project:
+          </p>
+          <div class="code-block">
+            <div class="code-header">
+              <span>Terminal</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>npm install ng-toastly</code></pre>
+          </div>
+          <div class="info-box">
+            <p data-i18n="start.step1.note">💡 What does this do?</p>
+          </div>
+
+          <h2 data-i18n="start.step2.title">Add the container</h2>
+          <p data-i18n="start.step2.description">
+            The container is where toasts appear. Add it to your main component:
+          </p>
+          <div class="code-block">
+            <div class="code-header">
+              <span>app.component.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-keyword">import</span> { Component } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
 <span class="code-keyword">import</span> { RouterOutlet } <span class="code-keyword">from</span> <span class="code-string">'@angular/router'</span>;
 <span class="code-keyword">import</span> { ToastContainerComponent } <span class="code-keyword">from</span> <span class="code-string">'toastly'</span>;
 
@@ -135,38 +150,42 @@
   `</span>,
 })
 <span class="code-keyword">export class</span> <span class="code-class">AppComponent</span> {}</code></pre>
-        </div>
-        <div class="info-box info-box-why">
-          <p data-i18n="start.step2.note">🤔 Why in the main component?</p>
-        </div>
-
-        <h2 data-i18n="code.comment.optional">Optional</h2>
-        <p data-i18n="errors.a2.solution">Add <code>@import 'toastly/styles/toastly.css';</code> to your styles.css</p>
-        <div class="code-block">
-          <div class="code-header">
-            <span>styles.css</span>
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
           </div>
-          <pre><code>@import 'toastly/styles/toastly.css';</code></pre>
-        </div>
-        
-        <div class="success-box">
-          <p data-i18n="start.step3.note">🎉 Done!</p>
-        </div>
-      </section>
-
-      <!-- First Toast -->
-      <section id="primeiro-toast" class="docs-section">
-        <h1 data-i18n="start.step3.title">Show your first toast!</h1>
-        <p class="lead" data-i18n="start.step3.description">Use the <code>ToastService</code> in any component to show notifications:</p>
-
-        <h2 data-i18n="start.badge">Getting Started</h2>
-        <div class="code-block">
-          <div class="code-header">
-            <span>my-component.ts</span>
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+          <div class="info-box info-box-why">
+            <p data-i18n="start.step2.note">🤔 Why in the main component?</p>
           </div>
-          <pre><code><span class="code-keyword">import</span> { Component, inject } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
+
+          <h2 data-i18n="code.comment.optional">Optional</h2>
+          <p data-i18n="errors.a2.solution">
+            Add <code>@import 'toastly/styles/toastly.css';</code> to your styles.css
+          </p>
+          <div class="code-block">
+            <div class="code-header">
+              <span>styles.css</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code>@import 'toastly/styles/toastly.css';</code></pre>
+          </div>
+
+          <div class="success-box">
+            <p data-i18n="start.step3.note">🎉 Done!</p>
+          </div>
+        </section>
+
+        <!-- First Toast -->
+        <section id="primeiro-toast" class="docs-section">
+          <h1 data-i18n="start.step3.title">Show your first toast!</h1>
+          <p class="lead" data-i18n="start.step3.description">
+            Use the <code>ToastService</code> in any component to show notifications:
+          </p>
+
+          <h2 data-i18n="start.badge">Getting Started</h2>
+          <div class="code-block">
+            <div class="code-header">
+              <span>my-component.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-keyword">import</span> { Component, inject } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
 <span class="code-keyword">import</span> { ToastService } <span class="code-keyword">from</span> <span class="code-string">'toastly'</span>;
 
 <span class="code-decorator">@Component</span>({
@@ -186,101 +205,103 @@
     <span class="code-keyword">this</span>.toastService.success(<span class="code-string" data-i18n="code.string.worked">'It worked! 🎉'</span>);
   }
 }</code></pre>
-        </div>
+          </div>
 
-        <h3 data-i18n="code.explanation.title">Understanding the code line by line:</h3>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th data-i18n="code.explanation.line">Line</th>
-              <th data-i18n="code.explanation.action">What it does</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>inject(ToastService)</code></td>
-              <td data-i18n="code.explanation.inject">Gets an instance of the toast service.</td>
-            </tr>
-            <tr>
-              <td><code>private readonly</code></td>
-              <td data-i18n="code.explanation.private">private: only this component...</td>
-            </tr>
-            <tr>
-              <td><code>.success()</code></td>
-              <td data-i18n="code.explanation.success">Shows a "success" toast...</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+          <h3 data-i18n="code.explanation.title">Understanding the code line by line:</h3>
+          <table class="docs-table">
+            <thead>
+              <tr>
+                <th data-i18n="code.explanation.line">Line</th>
+                <th data-i18n="code.explanation.action">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>inject(ToastService)</code></td>
+                <td data-i18n="code.explanation.inject">Gets an instance of the toast service.</td>
+              </tr>
+              <tr>
+                <td><code>private readonly</code></td>
+                <td data-i18n="code.explanation.private">private: only this component...</td>
+              </tr>
+              <tr>
+                <td><code>.success()</code></td>
+                <td data-i18n="code.explanation.success">Shows a "success" toast...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      <!-- Types -->
-      <section id="tipos" class="docs-section">
-        <h1 data-i18n="footer.toastTypes">Toast Types</h1>
-        <p class="lead" data-i18n="playground.types.description">Choose a type to preview</p>
+        <!-- Types -->
+        <section id="tipos" class="docs-section">
+          <h1 data-i18n="footer.toastTypes">Toast Types</h1>
+          <p class="lead" data-i18n="playground.types.description">Choose a type to preview</p>
 
-        <div class="types-grid">
-          <div class="type-card type-info">
-            <div class="type-header">
-              <span class="type-icon">ℹ️</span>
-              <h3>Info</h3>
+          <div class="types-grid">
+            <div class="type-card type-info">
+              <div class="type-header">
+                <span class="type-icon">ℹ️</span>
+                <h3>Info</h3>
+              </div>
+              <p data-i18n="playground.btn.info">Info</p>
+              <div class="code-block code-block-small">
+                <pre><code>toastService.info('Info message');</code></pre>
+              </div>
             </div>
-            <p data-i18n="playground.btn.info">Info</p>
-            <div class="code-block code-block-small">
-              <pre><code>toastService.info('Info message');</code></pre>
+
+            <div class="type-card type-success">
+              <div class="type-header">
+                <span class="type-icon">✅</span>
+                <h3>Success</h3>
+              </div>
+              <p data-i18n="playground.btn.success">Success</p>
+              <div class="code-block code-block-small">
+                <pre><code>toastService.success('Success message');</code></pre>
+              </div>
+            </div>
+
+            <div class="type-card type-warning">
+              <div class="type-header">
+                <span class="type-icon">⚠️</span>
+                <h3>Warning</h3>
+              </div>
+              <p data-i18n="playground.btn.warning">Warning</p>
+              <div class="code-block code-block-small">
+                <pre><code>toastService.warning('Warning message');</code></pre>
+              </div>
+            </div>
+
+            <div class="type-card type-danger">
+              <div class="type-header">
+                <span class="type-icon">❌</span>
+                <h3>Danger</h3>
+              </div>
+              <p data-i18n="playground.btn.danger">Danger</p>
+              <div class="code-block code-block-small">
+                <pre><code>toastService.danger('Error message');</code></pre>
+              </div>
             </div>
           </div>
 
-          <div class="type-card type-success">
-            <div class="type-header">
-              <span class="type-icon">✅</span>
-              <h3>Success</h3>
-            </div>
-            <p data-i18n="playground.btn.success">Success</p>
-            <div class="code-block code-block-small">
-              <pre><code>toastService.success('Success message');</code></pre>
-            </div>
+          <div class="info-box info-box-tip">
+            <strong data-i18n="best.do.title">✅ Do</strong>
+            <p data-i18n="best.do.2">Reserve success for important actions</p>
           </div>
+        </section>
 
-          <div class="type-card type-warning">
-            <div class="type-header">
-              <span class="type-icon">⚠️</span>
-              <h3>Warning</h3>
+        <!-- Options -->
+        <section id="opcoes" class="docs-section">
+          <h1 data-i18n="config.options.title">Available Options</h1>
+          <p class="lead" data-i18n="config.options.description">Description</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span data-i18n="playground.variations.description"
+                >Try different configurations</span
+              >
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
             </div>
-            <p data-i18n="playground.btn.warning">Warning</p>
-            <div class="code-block code-block-small">
-              <pre><code>toastService.warning('Warning message');</code></pre>
-            </div>
-          </div>
-
-          <div class="type-card type-danger">
-            <div class="type-header">
-              <span class="type-icon">❌</span>
-              <h3>Danger</h3>
-            </div>
-            <p data-i18n="playground.btn.danger">Danger</p>
-            <div class="code-block code-block-small">
-              <pre><code>toastService.danger('Error message');</code></pre>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-box info-box-tip">
-          <strong data-i18n="best.do.title">✅ Do</strong>
-          <p data-i18n="best.do.2">Reserve success for important actions</p>
-        </div>
-      </section>
-
-      <!-- Options -->
-      <section id="opcoes" class="docs-section">
-        <h1 data-i18n="config.options.title">Available Options</h1>
-        <p class="lead" data-i18n="config.options.description">Description</p>
-
-        <div class="code-block">
-          <div class="code-header">
-            <span data-i18n="playground.variations.description">Try different configurations</span>
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
-          </div>
-          <pre><code>toastService.show({
+            <pre><code>toastService.show({
   <span class="code-comment" data-i18n="code.comment.required">// Required</span>
   message: <span class="code-string" data-i18n="code.string.yourMessage">'Your message here'</span>,
   
@@ -292,117 +313,119 @@
   dismissible: <span class="code-keyword">true</span>,     <span class="code-comment" data-i18n="code.comment.dismissible">// Show close button</span>
   styleClass: <span class="code-string">'my-class'</span>,
 });</code></pre>
-        </div>
-
-        <h2 data-i18n="config.options.title">Options</h2>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th data-i18n="config.options.option">Option</th>
-              <th>Type</th>
-              <th data-i18n="config.options.default">Default</th>
-              <th data-i18n="config.options.description">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>message</code></td>
-              <td><code>string</code></td>
-              <td>-</td>
-              <td data-i18n="code.string.yourMessage">Message text</td>
-            </tr>
-            <tr>
-              <td><code>title</code></td>
-              <td><code>string</code></td>
-              <td>-</td>
-              <td data-i18n="config.desc.title">Bold title above the message</td>
-            </tr>
-            <tr>
-              <td><code>type</code></td>
-              <td><code>'info' | 'success' | 'warning' | 'danger'</code></td>
-              <td><code>'info'</code></td>
-              <td data-i18n="config.desc.type">Defines the color and icon</td>
-            </tr>
-            <tr>
-              <td><code>theme</code></td>
-              <td><code>'light' | 'dark'</code></td>
-              <td><code>'light'</code></td>
-              <td data-i18n="config.desc.theme">Visual theme (light or dark)</td>
-            </tr>
-            <tr>
-              <td><code>durationMs</code></td>
-              <td><code>number</code></td>
-              <td><code>5000</code></td>
-              <td data-i18n="config.desc.duration">Time to close automatically (0 = never)</td>
-            </tr>
-            <tr>
-              <td><code>dismissible</code></td>
-              <td><code>boolean</code></td>
-              <td><code>true</code></td>
-              <td data-i18n="config.desc.dismissible">Whether to show the close (x) button</td>
-            </tr>
-            <tr>
-              <td><code>styleClass</code></td>
-              <td><code>string</code></td>
-              <td>-</td>
-              <td data-i18n="config.desc.styleClass">Custom CSS classes</td>
-            </tr>
-            <tr>
-              <td><code>progressPercent</code></td>
-              <td><code>number</code></td>
-              <td>-</td>
-              <td data-i18n="config.desc.progress">Progress bar value (0-100)</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Positioning -->
-      <section id="posicao" class="docs-section">
-        <h1 data-i18n="config.pos.desc">Positioning</h1>
-        <p class="lead" data-i18n="pos.demoTitle">Position Demo</p>
-
-        <h2 data-i18n="pos.demoTitle">Positions</h2>
-        <div class="positions-demo">
-          <div class="position-option" onclick="showPositionToast('top-left')">
-            <code>top-left</code>
-            <span data-i18n="pos.topLeft">↖️ Top Left</span>
           </div>
-          <div class="position-option" onclick="showPositionToast('top-center')">
-            <code>top-center</code>
-            <span data-i18n="pos.topCenter">⬆️ Top Center</span>
-          </div>
-          <div class="position-option" onclick="showPositionToast('top-right')">
-            <code>top-right</code>
-            <span data-i18n="pos.topRight">↗️ Top Right</span>
-          </div>
-          <div class="position-option" onclick="showPositionToast('bottom-left')">
-            <code>bottom-left</code>
-            <span data-i18n="pos.bottomLeft">↙️ Bottom Left</span>
-          </div>
-          <div class="position-option" onclick="showPositionToast('bottom-center')">
-            <code>bottom-center</code>
-            <span data-i18n="pos.bottomCenter">⬇️ Bottom Center</span>
-          </div>
-          <div class="position-option active" onclick="showPositionToast('bottom-right')">
-            <code>bottom-right</code>
-            <span data-i18n="pos.bottomRight">↘️ Bottom Right</span>
-          </div>
-        </div>
 
-        <h2 data-i18n="config.pos.desc">How to change position</h2>
-        <div class="code-block">
-          <pre><code>&lt;toastly-container position="top-right" /&gt;</code></pre>
-        </div>
-      </section>
+          <h2 data-i18n="config.options.title">Options</h2>
+          <table class="docs-table">
+            <thead>
+              <tr>
+                <th data-i18n="config.options.option">Option</th>
+                <th>Type</th>
+                <th data-i18n="config.options.default">Default</th>
+                <th data-i18n="config.options.description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>message</code></td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td data-i18n="code.string.yourMessage">Message text</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td data-i18n="config.desc.title">Bold title above the message</td>
+              </tr>
+              <tr>
+                <td><code>type</code></td>
+                <td><code>'info' | 'success' | 'warning' | 'danger'</code></td>
+                <td><code>'info'</code></td>
+                <td data-i18n="config.desc.type">Defines the color and icon</td>
+              </tr>
+              <tr>
+                <td><code>theme</code></td>
+                <td><code>'light' | 'dark'</code></td>
+                <td><code>'light'</code></td>
+                <td data-i18n="config.desc.theme">Visual theme (light or dark)</td>
+              </tr>
+              <tr>
+                <td><code>durationMs</code></td>
+                <td><code>number</code></td>
+                <td><code>5000</code></td>
+                <td data-i18n="config.desc.duration">Time to close automatically (0 = never)</td>
+              </tr>
+              <tr>
+                <td><code>dismissible</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td data-i18n="config.desc.dismissible">Whether to show the close (x) button</td>
+              </tr>
+              <tr>
+                <td><code>styleClass</code></td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td data-i18n="config.desc.styleClass">Custom CSS classes</td>
+              </tr>
+              <tr>
+                <td><code>progressPercent</code></td>
+                <td><code>number</code></td>
+                <td>-</td>
+                <td data-i18n="config.desc.progress">Progress bar value (0-100)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      <!-- Actions -->
-      <section id="acoes" class="docs-section">
-        <h1 data-i18n="playground.btn.actions">Action Buttons</h1>
-        <p class="lead" data-i18n="themes.tip.desc">Dark theme... pairs well with toasts that have action buttons.</p>
+        <!-- Positioning -->
+        <section id="posicao" class="docs-section">
+          <h1 data-i18n="config.pos.desc">Positioning</h1>
+          <p class="lead" data-i18n="pos.demoTitle">Position Demo</p>
 
-        <div class="code-block">
-          <pre><code>toastService.show({
+          <h2 data-i18n="pos.demoTitle">Positions</h2>
+          <div class="positions-demo">
+            <div class="position-option" onclick="showPositionToast('top-left')">
+              <code>top-left</code>
+              <span data-i18n="pos.topLeft">↖️ Top Left</span>
+            </div>
+            <div class="position-option" onclick="showPositionToast('top-center')">
+              <code>top-center</code>
+              <span data-i18n="pos.topCenter">⬆️ Top Center</span>
+            </div>
+            <div class="position-option" onclick="showPositionToast('top-right')">
+              <code>top-right</code>
+              <span data-i18n="pos.topRight">↗️ Top Right</span>
+            </div>
+            <div class="position-option" onclick="showPositionToast('bottom-left')">
+              <code>bottom-left</code>
+              <span data-i18n="pos.bottomLeft">↙️ Bottom Left</span>
+            </div>
+            <div class="position-option" onclick="showPositionToast('bottom-center')">
+              <code>bottom-center</code>
+              <span data-i18n="pos.bottomCenter">⬇️ Bottom Center</span>
+            </div>
+            <div class="position-option active" onclick="showPositionToast('bottom-right')">
+              <code>bottom-right</code>
+              <span data-i18n="pos.bottomRight">↘️ Bottom Right</span>
+            </div>
+          </div>
+
+          <h2 data-i18n="config.pos.desc">How to change position</h2>
+          <div class="code-block">
+            <pre><code>&lt;toastly-container position="top-right" /&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- Actions -->
+        <section id="acoes" class="docs-section">
+          <h1 data-i18n="playground.btn.actions">Action Buttons</h1>
+          <p class="lead" data-i18n="themes.tip.desc">
+            Dark theme... pairs well with toasts that have action buttons.
+          </p>
+
+          <div class="code-block">
+            <pre><code>toastService.show({
   type: <span class="code-string">'info'</span>,
   theme: <span class="code-string">'dark'</span>,
   title: <span class="code-string">'Update Available'</span>,
@@ -421,238 +444,376 @@
     },
   ],
 });</code></pre>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <!-- CSS Variables -->
-      <section id="css-variables" class="docs-section">
-        <h1 data-i18n="footer.customization">CSS Variables</h1>
-        <p class="lead" data-i18n="features.customizable.description">CSS variables for everything...</p>
-        <div class="code-block">
-          <pre><code><span class="code-comment" data-i18n="code.comment.cssGlobal">/* Customize global look */</span>
+        <!-- CSS Variables -->
+        <section id="css-variables" class="docs-section">
+          <h1 data-i18n="footer.customization">CSS Variables</h1>
+          <p class="lead" data-i18n="features.customizable.description">
+            CSS variables for everything...
+          </p>
+          <div class="code-block">
+            <pre><code><span class="code-comment" data-i18n="code.comment.cssGlobal">/* Customize global look */</span>
 :root {
   --toastly-bg: <span class="code-string">#ffffff</span>;
   --toastly-success: <span class="code-string">#16a34a</span>;
 }</code></pre>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <!-- Custom Icons -->
-      <section id="icones" class="docs-section">
-        <h1 data-i18n="icons.title">Custom Icons</h1>
-        <p class="lead" data-i18n="icons.lead">Use your own icons...</p>
-        
-        <h2 data-i18n="icons.how.title">How does it work?</h2>
-        <p data-i18n="icons.how.desc">Toastly accepts a TemplateRef...</p>
+        <!-- Custom Icons -->
+        <section id="icones" class="docs-section">
+          <h1 data-i18n="icons.title">Custom Icons</h1>
+          <p class="lead" data-i18n="icons.lead">Use your own icons...</p>
 
-        <h3 data-i18n="icons.step1.title">1. Install Lucide Angular</h3>
-        <div class="code-block">
-          <pre><code>npm install lucide-angular</code></pre>
-        </div>
+          <h2 data-i18n="icons.how.title">How does it work?</h2>
+          <p data-i18n="icons.how.desc">Toastly accepts a TemplateRef...</p>
 
-        <h3 data-i18n="icons.step2.title">2. Create a template for the icon</h3>
-        <p data-i18n="icons.step2.desc">In your component...</p>
-        <div class="code-block">
-          <pre><code><span class="code-comment" data-i18n="code.comment.iconTemplate">&lt;!-- Custom icon template --&gt;</span>
+          <h3 data-i18n="icons.step1.title">1. Install Lucide Angular</h3>
+          <div class="code-block">
+            <pre><code>npm install lucide-angular</code></pre>
+          </div>
+
+          <h3 data-i18n="icons.step2.title">2. Create a template for the icon</h3>
+          <p data-i18n="icons.step2.desc">In your component...</p>
+          <div class="code-block">
+            <pre><code><span class="code-comment" data-i18n="code.comment.iconTemplate">&lt;!-- Custom icon template --&gt;</span>
 &lt;ng-template #customIcon&gt;
   <span class="code-comment" data-i18n="code.comment.lucideRef">&lt;!-- Reference to Lucide icons --&gt;</span>
   &lt;i-lucide name="download"&gt;&lt;/i-lucide&gt;
 &lt;/ng-template&gt;</code></pre>
-        </div>
-        
-        <div class="info-box info-box-why">
-          <strong data-i18n="icons.why.title">🤔 Why use TemplateRef?</strong>
-          <p data-i18n="icons.why.desc">Using TemplateRef...</p>
-        </div>
+          </div>
 
-        <h2 data-i18n="icons.svg.title">Using direct SVG (no library)</h2>
-        <p data-i18n="icons.svg.desc">If you do not want to install an icon library...</p>
-        <div class="code-block">
-          <pre><code>&lt;ng-template #svgIcon&gt;
+          <div class="info-box info-box-why">
+            <strong data-i18n="icons.why.title">🤔 Why use TemplateRef?</strong>
+            <p data-i18n="icons.why.desc">Using TemplateRef...</p>
+          </div>
+
+          <h2 data-i18n="icons.svg.title">Using direct SVG (no library)</h2>
+          <p data-i18n="icons.svg.desc">If you do not want to install an icon library...</p>
+          <div class="code-block">
+            <pre><code>&lt;ng-template #svgIcon&gt;
   &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" ...&gt;
     &lt;path d="..." /&gt;
   &lt;/svg&gt;
 &lt;/ng-template&gt;</code></pre>
-        </div>
+          </div>
 
-        <h2 data-i18n="icons.diff.title">Different icons for each type</h2>
-        <p data-i18n="icons.diff.desc">You can create a service...</p>
+          <h2 data-i18n="icons.diff.title">Different icons for each type</h2>
+          <p data-i18n="icons.diff.desc">You can create a service...</p>
 
-        <div class="info-box info-box-tip">
-          <strong data-i18n="icons.tip.title">💡 Style Tip</strong>
-          <p data-i18n="icons.tip.desc">Default icons use width: 20px...</p>
-        </div>
-      </section>
+          <div class="info-box info-box-tip">
+            <strong data-i18n="icons.tip.title">💡 Style Tip</strong>
+            <p data-i18n="icons.tip.desc">Default icons use width: 20px...</p>
+          </div>
+        </section>
 
-      <!-- Themes -->
-      <section id="temas" class="docs-section">
-        <h1 data-i18n="themes.title">Themes</h1>
-        <p class="lead" data-i18n="themes.lead">Light or Dark...</p>
+        <!-- Themes -->
+        <section id="temas" class="docs-section">
+          <h1 data-i18n="themes.title">Themes</h1>
+          <p class="lead" data-i18n="themes.lead">Light or Dark...</p>
 
-        <h2 data-i18n="themes.compare">Comparison</h2>
-        <div class="themes-comparison">
-          <div class="theme-card light">
-            <p class="code-comment" style="font-family: monospace; font-size: 0.9em; margin-bottom: 0.5rem;" data-i18n="code.comment.lightTheme">// Light theme (default)</p>
-            <!-- Demo of light toast -->
-            <div class="toastly-item toastly-item--success">
-               <div class="toastly-item__content">
+          <h2 data-i18n="themes.compare">Comparison</h2>
+          <div class="themes-comparison">
+            <div class="theme-card light">
+              <p
+                class="code-comment"
+                style="font-family: monospace; font-size: 0.9em; margin-bottom: 0.5rem"
+                data-i18n="code.comment.lightTheme"
+              >
+                // Light theme (default)
+              </p>
+              <!-- Demo of light toast -->
+              <div class="toastly-item toastly-item--success">
+                <div class="toastly-item__content">
                   <div class="toastly-item__icon">✅</div>
                   <div class="toastly-item__text">
-                    <div class="toastly-item__title">Success</div>
-                    <div class="toastly-item__message">Operation completed</div>
+                    <div class="toastly-item__title" data-i18n="toast.demo.success">Success</div>
+                    <div class="toastly-item__message" data-i18n="toast.demo.completed">Operation completed</div>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="theme-card dark">
-            <p class="code-comment" style="font-family: monospace; font-size: 0.9em; margin-bottom: 0.5rem;" data-i18n="code.comment.darkTheme">// Dark theme</p>
-            <!-- Demo of dark toast -->
-            <div class="toastly-item toastly-item--success toastly-item--dark">
-               <div class="toastly-item__content">
+            <div class="theme-card dark">
+              <p
+                class="code-comment"
+                style="font-family: monospace; font-size: 0.9em; margin-bottom: 0.5rem"
+                data-i18n="code.comment.darkTheme"
+              >
+                // Dark theme
+              </p>
+              <!-- Demo of dark toast -->
+              <div class="toastly-item toastly-item--success toastly-item--dark">
+                <div class="toastly-item__content">
                   <div class="toastly-item__icon">✅</div>
                   <div class="toastly-item__text">
-                    <div class="toastly-item__title">Success</div>
-                    <div class="toastly-item__message">Operation completed</div>
+                    <div class="toastly-item__title" data-i18n="toast.demo.success">Success</div>
+                    <div class="toastly-item__message" data-i18n="toast.demo.completed">Operation completed</div>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="info-box info-box-tip">
-          <strong data-i18n="themes.tip.title">💡 When to use dark theme?</strong>
-          <p data-i18n="themes.tip.desc">Dark theme is great for...</p>
-        </div>
-      </section>
-
-      <!-- Global Config -->
-      <section id="config-global" class="docs-section">
-        <h1 data-i18n="config.options.title">Global Configuration</h1>
-        <div class="code-block">
-          <pre><code><span class="code-keyword">import</span> { TOAST_GLOBAL_CONFIG } <span class="code-keyword">from</span> <span class="code-string">'toastly'</span>;</code></pre>
-        </div>
-      </section>
-
-      <!-- Best Practices -->
-      <section id="boas-praticas" class="docs-section">
-        <h1 data-i18n="footer.bestPractices">Best Practices</h1>
-        <div class="dos-donts">
-          <div class="do-card">
-            <h3 data-i18n="best.do.title">✅ Do</h3>
-            <ul>
-              <li data-i18n="best.do.1">Use short messages</li>
-              <li data-i18n="best.do.2">Reserve success for important actions</li>
-            </ul>
+          <div class="info-box info-box-tip">
+            <strong data-i18n="themes.tip.title">💡 When to use dark theme?</strong>
+            <p data-i18n="themes.tip.desc">Dark theme is great for...</p>
           </div>
-          <div class="dont-card">
-            <h3 data-i18n="best.dont.title">❌ Avoid</h3>
-            <ul>
-              <li data-i18n="best.dont.1">Toasts for every small action</li>
-              <li data-i18n="best.dont.2">Very long messages</li>
-            </ul>
+        </section>
+
+        <!-- Global Config -->
+        <section id="config-global" class="docs-section">
+          <h1 data-i18n="config.options.title">Global Configuration</h1>
+          <p class="lead" data-i18n="config.global.lead">
+            Set default values for all toasts in your application.
+          </p>
+
+          <h2 data-i18n="config.global.howto">How to Configure</h2>
+          <p data-i18n="config.global.howto.desc">
+            Use <code>provideToastly()</code> in your application configuration:
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>app.config.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-keyword">import</span> { ApplicationConfig } <span class="code-keyword">from</span> <span class="code-string">'@angular/core'</span>;
+<span class="code-keyword">import</span> { provideToastly } <span class="code-keyword">from</span> <span class="code-string">'ng-toastly'</span>;
+
+<span class="code-keyword">export const</span> appConfig: ApplicationConfig = {
+  providers: [
+    provideToastly({
+      position: <span class="code-string">'top-right'</span>,
+      theme: <span class="code-string">'dark'</span>,
+      defaultDurationMs: <span class="code-number">3000</span>,
+      dismissibleByDefault: <span class="code-keyword">true</span>,
+      newestOnTop: <span class="code-keyword">true</span>,
+    }),
+  ],
+};</code></pre>
           </div>
-        </div>
-      </section>
 
-      <!-- Common Errors -->
-      <section id="erros-comuns" class="docs-section">
-        <h1 data-i18n="errors.title">Common Errors</h1>
-        <details class="error-item">
-          <summary data-i18n="errors.q1">Toast does not appear</summary>
-          <div class="error-content">
-            <p data-i18n="errors.a1.cause">Cause: Forgot container</p>
-            <p data-i18n="errors.a1.solution">Solution: Add container</p>
-          </div>
-        </details>
-      </section>
+          <h2 data-i18n="config.options.title">Available Options</h2>
+          <table class="docs-table">
+            <thead>
+              <tr>
+                <th data-i18n="config.options.option">Option</th>
+                <th>Type</th>
+                <th data-i18n="config.options.default">Default</th>
+                <th data-i18n="config.options.description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>position</code></td>
+                <td><code>ToastPosition</code></td>
+                <td><code>'bottom-right'</code></td>
+                <td data-i18n="config.global.opt.position">Default position for all toasts</td>
+              </tr>
+              <tr>
+                <td><code>theme</code></td>
+                <td><code>'light' | 'dark'</code></td>
+                <td><code>'light'</code></td>
+                <td data-i18n="config.global.opt.theme">Default theme for all toasts</td>
+              </tr>
+              <tr>
+                <td><code>defaultDurationMs</code></td>
+                <td><code>number</code></td>
+                <td><code>5000</code></td>
+                <td data-i18n="config.global.opt.duration">Auto-dismiss delay in milliseconds</td>
+              </tr>
+              <tr>
+                <td><code>maximumVisibleToasts</code></td>
+                <td><code>number</code></td>
+                <td><code>5</code></td>
+                <td data-i18n="config.global.opt.maxVisible">Max toasts visible at once</td>
+              </tr>
+              <tr>
+                <td><code>newestOnTop</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td data-i18n="config.global.opt.newestOnTop">New toasts appear at top of stack</td>
+              </tr>
+              <tr>
+                <td><code>pauseOnHover</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td data-i18n="config.global.opt.pauseOnHover">Pause auto-dismiss on hover</td>
+              </tr>
+              <tr>
+                <td><code>dismissibleByDefault</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td data-i18n="config.global.opt.dismissible">Show close button by default</td>
+              </tr>
+              <tr>
+                <td><code>defaultType</code></td>
+                <td><code>ToastType</code></td>
+                <td><code>'info'</code></td>
+                <td data-i18n="config.global.opt.defaultType">
+                  Default toast type when not specified
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-      <!-- Technical Decisions -->
-      <section id="decisoes" class="docs-section">
-        <h1 data-i18n="footer.technicalDecisions">Technical Decisions</h1>
-        
-        <h2 data-i18n="tech.whySignals.title">Why Signals?</h2>
-        <p data-i18n="tech.whySignals.p1">We use Angular's Signals API because:</p>
-        <ul>
-          <li data-i18n="tech.whySignals.l1">Performance...</li>
-          <li data-i18n="tech.whySignals.l2">Simplicity...</li>
-          <li data-i18n="tech.whySignals.l3">Future...</li>
-          <li data-i18n="tech.whySignals.l4">Fewer bugs...</li>
-        </ul>
+          <h2 data-i18n="config.global.manual">Manual Configuration (Alternative)</h2>
+          <p data-i18n="config.global.manual.desc">
+            You can also provide configuration directly using the injection token:
+          </p>
 
-        <h2 data-i18n="tech.whyZeroDeps.title">Why zero dependencies?</h2>
-        <p data-i18n="tech.whyZeroDeps.p1">We decided not to use...</p>
-        <ul>
-          <li data-i18n="tech.whyZeroDeps.l1">Fewer conflicts...</li>
-          <li data-i18n="tech.whyZeroDeps.l2">Smaller bundle...</li>
-          <li data-i18n="tech.whyZeroDeps.l3">Maintenance...</li>
-          <li data-i18n="tech.whyZeroDeps.l4">Control...</li>
-        </ul>
+          <div class="code-block">
+            <div class="code-header">
+              <span>app.config.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-keyword">import</span> { TOAST_GLOBAL_CONFIG } <span class="code-keyword">from</span> <span class="code-string">'ng-toastly'</span>;
 
-        <h2 data-i18n="tech.whySimple.title">Why "simple" code?</h2>
-        <p data-i18n="tech.whySimple.p1">Toastly code is intentionally simple...</p>
-        <ul>
-          <li data-i18n="tech.whySimple.l1">Readability...</li>
-          <li data-i18n="tech.whySimple.l2">Debugging...</li>
-          <li data-i18n="tech.whySimple.l3">Learning...</li>
-          <li data-i18n="tech.whySimple.l4">Maintenance...</li>
-        </ul>
-        <blockquote data-i18n="tech.whySimple.quote">"Prefer code..."</blockquote>
-
-        <h2 data-i18n="tech.whyDestroy.title">Why DestroyRef for timers?</h2>
-        <p data-i18n="tech.whyDestroy.p1">We use DestroyRef...</p>
-        <ul>
-          <li data-i18n="tech.whyDestroy.l1">Prevents memory leaks</li>
-          <li data-i18n="tech.whyDestroy.l2">Avoids errors...</li>
-          <li data-i18n="tech.whyDestroy.l3">Modern standard...</li>
-        </ul>
-      </section>
-
-      <!-- Footer -->
-      <footer class="docs-footer">
-        <p><strong data-i18n="logo.text">Toastly</strong> - <span data-i18n="footer.madeWith">Made with ❤️</span></p>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    // Copy button functionality
-    document.querySelectorAll('.copy-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const codeBlock = button.closest('.code-block');
-        const code = codeBlock.querySelector('code').textContent;
-        navigator.clipboard.writeText(code);
-        button.textContent = I18n.t('common.copied');
-        setTimeout(() => (button.textContent = I18n.t('common.copy')), 2000);
-      });
-    });
-
-    // Active sidebar link
-    const sections = document.querySelectorAll('.docs-section');
-    const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            sidebarLinks.forEach((link) => {
-              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-            });
-          }
-        });
+<span class="code-keyword">export const</span> appConfig = {
+  providers: [
+    {
+      provide: TOAST_GLOBAL_CONFIG,
+      useValue: {
+        position: <span class="code-string">'top-center'</span>,
+        theme: <span class="code-string">'dark'</span>,
       },
-      { rootMargin: '-20% 0px -60% 0px' }
-    );
+    },
+  ],
+};</code></pre>
+          </div>
+        </section>
 
-    sections.forEach((section) => observer.observe(section));
+        <!-- Best Practices -->
+        <section id="boas-praticas" class="docs-section">
+          <h1 data-i18n="footer.bestPractices">Best Practices</h1>
+          <div class="dos-donts">
+            <div class="do-card">
+              <h3 data-i18n="best.do.title">✅ Do</h3>
+              <ul>
+                <li data-i18n="best.do.1">Use short and direct messages</li>
+                <li data-i18n="best.do.2">Reserve success for important actions</li>
+                <li data-i18n="best.do.3">Use warning before destructive actions</li>
+                <li data-i18n="best.do.4">Allow user to dismiss manually</li>
+                <li data-i18n="best.do.5">Increase duration for long messages</li>
+              </ul>
+            </div>
+            <div class="dont-card">
+              <h3 data-i18n="best.dont.title">❌ Avoid</h3>
+              <ul>
+                <li data-i18n="best.dont.1">Toasts for every small action</li>
+                <li data-i18n="best.dont.2">Very long messages</li>
+                <li data-i18n="best.dont.3">More than 3 toasts at once</li>
+                <li data-i18n="best.dont.4">Toasts that cannot be dismissed</li>
+                <li data-i18n="best.dont.5">Using danger for simple validation errors</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-    // Initialize Lucide icons
-    lucide.createIcons();
-  </script>
+        <!-- Common Errors -->
+        <section id="erros-comuns" class="docs-section">
+          <h1 data-i18n="errors.title">Common Errors</h1>
+          <details class="error-item">
+            <summary data-i18n="errors.q1">Toast does not appear</summary>
+            <div class="error-content">
+              <p data-i18n="errors.a1.cause">Cause: Forgot container</p>
+              <p data-i18n="errors.a1.solution">Solution: Add container</p>
+            </div>
+          </details>
+        </section>
 
-  <!-- i18n Manager -->
-  <script src="js/i18n.js"></script>
-  <!-- Toast Demo Logic -->
-  <script src="js/toast-demo.js"></script>
-</body>
+        <!-- Technical Decisions -->
+        <section id="decisoes" class="docs-section">
+          <h1 data-i18n="footer.technicalDecisions">Technical Decisions</h1>
+
+          <h2 data-i18n="tech.whySignals.title">Why Signals?</h2>
+          <p data-i18n="tech.whySignals.p1">We use Angular's Signals API because:</p>
+          <ul>
+            <li data-i18n="tech.whySignals.l1">Performance...</li>
+            <li data-i18n="tech.whySignals.l2">Simplicity...</li>
+            <li data-i18n="tech.whySignals.l3">Future...</li>
+            <li data-i18n="tech.whySignals.l4">Fewer bugs...</li>
+          </ul>
+
+          <h2 data-i18n="tech.whyZeroDeps.title">Why zero dependencies?</h2>
+          <p data-i18n="tech.whyZeroDeps.p1">We decided not to use...</p>
+          <ul>
+            <li data-i18n="tech.whyZeroDeps.l1">Fewer conflicts...</li>
+            <li data-i18n="tech.whyZeroDeps.l2">Smaller bundle...</li>
+            <li data-i18n="tech.whyZeroDeps.l3">Maintenance...</li>
+            <li data-i18n="tech.whyZeroDeps.l4">Control...</li>
+          </ul>
+
+          <h2 data-i18n="tech.whySimple.title">Why "simple" code?</h2>
+          <p data-i18n="tech.whySimple.p1">Toastly code is intentionally simple...</p>
+          <ul>
+            <li data-i18n="tech.whySimple.l1">Readability...</li>
+            <li data-i18n="tech.whySimple.l2">Debugging...</li>
+            <li data-i18n="tech.whySimple.l3">Learning...</li>
+            <li data-i18n="tech.whySimple.l4">Maintenance...</li>
+          </ul>
+          <blockquote data-i18n="tech.whySimple.quote">"Prefer code..."</blockquote>
+
+          <h2 data-i18n="tech.whyDestroy.title">Why DestroyRef for timers?</h2>
+          <p data-i18n="tech.whyDestroy.p1">We use DestroyRef...</p>
+          <ul>
+            <li data-i18n="tech.whyDestroy.l1">Prevents memory leaks</li>
+            <li data-i18n="tech.whyDestroy.l2">Avoids errors...</li>
+            <li data-i18n="tech.whyDestroy.l3">Modern standard...</li>
+          </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="docs-footer">
+          <p>
+            <strong data-i18n="logo.text">Toastly</strong> -
+            <span data-i18n="footer.madeWith">Made with ❤️</span>
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      // Copy button functionality
+      document.querySelectorAll('.copy-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+          const codeBlock = button.closest('.code-block');
+          const code = codeBlock.querySelector('code').textContent;
+          navigator.clipboard.writeText(code);
+          button.textContent = I18n.t('common.copied');
+          setTimeout(() => (button.textContent = I18n.t('common.copy')), 2000);
+        });
+      });
+
+      // Active sidebar link
+      const sections = document.querySelectorAll('.docs-section');
+      const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              sidebarLinks.forEach((link) => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+              });
+            }
+          });
+        },
+        { rootMargin: '-20% 0px -60% 0px' }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+
+    <!-- i18n Manager -->
+    <script src="js/i18n.js"></script>
+    <!-- Toast Demo Logic -->
+    <script src="js/toast-demo.js"></script>
+  </body>
 </html>

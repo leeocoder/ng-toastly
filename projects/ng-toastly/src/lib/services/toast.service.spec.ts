@@ -207,4 +207,54 @@ describe('ToastService', () => {
       expect(service.visibleToasts().length).toBe(5);
     });
   });
+
+  // ==========================================================================
+  // Global Config Tests
+  // ==========================================================================
+
+  describe('global config', () => {
+    it('should expose pauseOnHover from global config', () => {
+      // Default value is true
+      expect(service.pauseOnHover()).toBe(true);
+    });
+
+    it('should expose position from global config', () => {
+      // Default value is bottom-right
+      expect(service.position()).toBe('bottom-right');
+    });
+  });
+
+  // ==========================================================================
+  // Timer Pause/Resume Tests
+  // ==========================================================================
+
+  describe('timer pause and resume', () => {
+    it('should pause timer without error', () => {
+      const toastId = service.show({ message: 'Test', durationMs: 5000 });
+
+      expect(() => service.pauseTimer(toastId)).not.toThrow();
+    });
+
+    it('should resume timer without error', () => {
+      const toastId = service.show({ message: 'Test', durationMs: 5000 });
+
+      service.pauseTimer(toastId);
+      expect(() => service.resumeTimer(toastId)).not.toThrow();
+    });
+
+    it('should handle pause on non-existent toast gracefully', () => {
+      expect(() => service.pauseTimer('non-existent')).not.toThrow();
+    });
+
+    it('should handle resume on non-existent toast gracefully', () => {
+      expect(() => service.resumeTimer('non-existent')).not.toThrow();
+    });
+
+    it('should not resume timer for toast with durationMs 0', () => {
+      const toastId = service.show({ message: 'Test', durationMs: 0 });
+
+      // Should not throw and should not schedule auto-dismiss
+      expect(() => service.resumeTimer(toastId)).not.toThrow();
+    });
+  });
 });

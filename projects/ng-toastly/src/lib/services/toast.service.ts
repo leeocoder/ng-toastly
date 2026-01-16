@@ -85,6 +85,11 @@ export class ToastService {
    */
   readonly position = computed(() => this.globalConfig.position);
 
+  /**
+   * Whether to pause auto-dismiss on hover.
+   */
+  readonly pauseOnHover = computed(() => this.globalConfig.pauseOnHover);
+
   constructor() {
     // Merge provided config with defaults
     const providedConfig = inject(TOAST_GLOBAL_CONFIG, { optional: true });

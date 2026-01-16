@@ -307,6 +307,26 @@ const I18n = (() => {
       'footer.technicalDecisions': 'Technical Decisions',
       'footer.madeWith': 'Made with ❤️ for the Angular community',
 
+      // Global Config Section
+      'config.global.lead': 'Set default values for all toasts in your application.',
+      'config.global.howto': 'How to Configure',
+      'config.global.howto.desc': 'Use <code>provideToastly()</code> in your application configuration:',
+      'config.global.opt.position': 'Default position for all toasts',
+      'config.global.opt.theme': 'Default theme for all toasts',
+      'config.global.opt.duration': 'Auto-dismiss delay in milliseconds',
+      'config.global.opt.maxVisible': 'Max toasts visible at once',
+      'config.global.opt.newestOnTop': 'New toasts appear at top of stack',
+      'config.global.opt.pauseOnHover': 'Pause auto-dismiss on hover',
+      'config.global.opt.dismissible': 'Show close button by default',
+      'config.global.opt.defaultType': 'Default toast type when not specified',
+      'config.global.manual': 'Manual Configuration (Alternative)',
+      'config.global.manual.desc': 'You can also provide configuration directly using the injection token:',
+
+      // Misc
+      'logo.text': 'Toastly',
+      'toast.demo.success': 'Success',
+      'toast.demo.completed': 'Operation completed',
+
       // Common
       'common.copy': 'Copy',
       'common.copied': 'Copied!'
@@ -586,6 +606,26 @@ const I18n = (() => {
       'footer.resources': 'Recursos',
       'footer.technicalDecisions': 'Decisões Técnicas',
       'footer.madeWith': 'Feito com ❤️ para a comunidade Angular',
+
+      // Global Config Section
+      'config.global.lead': 'Defina valores padrão para todos os toasts da sua aplicação.',
+      'config.global.howto': 'Como Configurar',
+      'config.global.howto.desc': 'Use <code>provideToastly()</code> na configuração da sua aplicação:',
+      'config.global.opt.position': 'Posição padrão para todos os toasts',
+      'config.global.opt.theme': 'Tema padrão para todos os toasts',
+      'config.global.opt.duration': 'Tempo de auto-dismiss em milissegundos',
+      'config.global.opt.maxVisible': 'Máximo de toasts visíveis ao mesmo tempo',
+      'config.global.opt.newestOnTop': 'Novos toasts aparecem no topo da pilha',
+      'config.global.opt.pauseOnHover': 'Pausar auto-dismiss ao passar o mouse',
+      'config.global.opt.dismissible': 'Mostrar botão de fechar por padrão',
+      'config.global.opt.defaultType': 'Tipo de toast padrão quando não especificado',
+      'config.global.manual': 'Configuração Manual (Alternativa)',
+      'config.global.manual.desc': 'Você também pode fornecer a configuração diretamente usando o token de injeção:',
+
+      // Misc
+      'logo.text': 'Toastly',
+      'toast.demo.success': 'Sucesso',
+      'toast.demo.completed': 'Operação concluída',
 
       // Common
       'common.copy': 'Copiar',

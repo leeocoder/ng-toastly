@@ -43,6 +43,8 @@ const TOAST_TYPE_ICON_PATHS: Readonly<Record<string, string>> = {
     '[attr.role]': 'ariaRole()',
     '[attr.aria-live]': '"polite"',
     '[style.--toastly-animation-duration]': 'animationDurationCssValue',
+    '(mouseenter)': 'handleMouseEnter()',
+    '(mouseleave)': 'handleMouseLeave()',
   },
   template: `
     <div class="toastly-item__content">
@@ -426,13 +428,17 @@ export class ToastItemComponent {
    * Pauses auto-dismiss on mouse enter (if configured).
    */
   handleMouseEnter(): void {
-    this.toastService.pauseTimer(this.toast().id);
+    if (this.toastService.pauseOnHover()) {
+      this.toastService.pauseTimer(this.toast().id);
+    }
   }
 
   /**
    * Resumes auto-dismiss on mouse leave (if configured).
    */
   handleMouseLeave(): void {
-    this.toastService.resumeTimer(this.toast().id);
+    if (this.toastService.pauseOnHover()) {
+      this.toastService.resumeTimer(this.toast().id);
+    }
   }
 }

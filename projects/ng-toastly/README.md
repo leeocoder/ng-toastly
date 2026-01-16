@@ -54,12 +54,12 @@ Toastly is standalone. You don't need to import a generic module. Just add the c
 ```typescript
 // app.component.ts
 import { Component, inject } from '@angular/core';
-import { ToastlyContainer, ToastService } from 'toastly';
+import { ToastContainerComponent, ToastService } from 'ng-toastly';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ToastlyContainer],
+  imports: [ToastContainerComponent],
   template: `
     <button (click)="showToast()">Show Toast</button>
 
@@ -82,14 +82,14 @@ You can provide global configuration in your `app.config.ts`:
 
 ```typescript
 // app.config.ts
-import { provideToastly } from 'toastly';
+import { provideToastly } from 'ng-toastly';
 
 export const appConfig = {
   providers: [
     provideToastly({
       position: 'bottom-right',
-      theme: 'auto', // respects system preference
-      timeout: 5000,
+      theme: 'dark',
+      defaultDurationMs: 5000,
     }),
   ],
 };
