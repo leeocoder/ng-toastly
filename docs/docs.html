@@ -572,6 +572,43 @@ ng add ng-toastly --skipContainer</code></pre>
           </div>
         </section>
 
+        <!-- Custom CSS Classes -->
+        <section id="classes-css" class="docs-section">
+          <h1 data-i18n="customcss.title">Custom CSS Classes</h1>
+          <p class="lead" data-i18n="customcss.intro">For granular control, apply custom CSS classes.</p>
+
+          <h3 data-i18n="customcss.step1">1. Define your class in global styles:</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <span>styles.css</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code class="language-css">.my-gold-toast {
+  /* Override variables or properties */
+  --toastly-bg: #ffd700;
+  --toastly-text: #000000;
+  border: 2px solid #b8860b;
+  font-weight: bold;
+}</code></pre>
+          </div>
+
+          <h3 data-i18n="customcss.step2">2. Use the class when showing a toast:</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <span>component.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code class="language-typescript">this.toastService.show({
+  message: 'You won a prize! 🏆',
+  styleClass: 'my-gold-toast'
+});</code></pre>
+          </div>
+
+          <div class="info-box info-box-tip">
+            <p data-i18n="customcss.tip">Note: Use styles.css or ::ng-deep.</p>
+          </div>
+        </section>
+
         <!-- Custom Icons -->
         <section id="icones" class="docs-section">
           <h1 data-i18n="icons.title">Custom Icons</h1>

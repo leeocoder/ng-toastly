@@ -256,6 +256,12 @@ const I18n = (() => {
       'tech.whyDestroy.l3': 'Is the modern Angular standard (replacing <code>OnDestroy</code>)',
 
       // Custom Icons
+      'customcss.title': 'Custom CSS Classes',
+      'customcss.intro': 'For granular control, you can apply custom CSS classes to individual toasts using the <code>styleClass</code> property.',
+      'customcss.step1': '1. Define your class in global styles:',
+      'customcss.step2': '2. Use the class when showing a toast:',
+      'customcss.tip': '<strong>Note:</strong> Since toasts are rendered in an overlay, component-scoped styles (ViewEncapsulation) might not apply directly. Use <code>styles.css</code> or <code>::ng-deep</code>.',
+
       'icons.title': 'Custom Icons',
       'icons.lead': 'Use your own icons instead of the default ones. Works with any icon library, including <strong>Lucide Icons</strong>, <strong>FontAwesome</strong>, or custom SVGs.',
       'icons.how.title': 'How does it work?',
@@ -615,6 +621,12 @@ const I18n = (() => {
       'tech.whyDestroy.l3': 'É o padrão moderno do Angular (substituindo <code>OnDestroy</code>)',
 
       // Custom Icons
+      'customcss.title': 'Classes CSS Customizadas',
+      'customcss.intro': 'Para controle granular, você pode aplicar classes CSS a toasts individuais usando a propriedade <code>styleClass</code>.',
+      'customcss.step1': '1. Defina sua classe nos estilos globais:',
+      'customcss.step2': '2. Use a classe ao mostrar um toast:',
+      'customcss.tip': '<strong>Nota:</strong> Como os toasts são renderizados em um overlay, estilos de componente (ViewEncapsulation) podem não se aplicar. Use <code>styles.css</code> ou <code>::ng-deep</code>.',
+
       'icons.title': 'Ícones Customizados',
       'icons.lead': 'Use seus próprios ícones em vez dos ícones padrão. Funciona com qualquer biblioteca de ícones, incluindo <strong>Lucide Icons</strong>, <strong>FontAwesome</strong>, ou SVGs customizados.',
       'icons.how.title': 'Como funciona?',
