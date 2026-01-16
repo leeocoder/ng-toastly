@@ -91,6 +91,7 @@
               <li><a href="#classes-css" data-i18n="features.customizable.title">Custom CSS</a></li>
               <li><a href="#icones" data-i18n="icons.title">Custom Icons</a></li>
               <li><a href="#temas" data-i18n="themes.title">Themes</a></li>
+              <li><a href="#animations" data-i18n="animations.title">Custom Animations</a></li>
             </ul>
           </div>
           <div class="sidebar-section">
@@ -672,6 +673,89 @@ ng add ng-toastly --skipContainer</code></pre>
         </section>
 
         <!-- Global Config -->
+        <!-- Animations -->
+        <section id="animations" class="docs-section">
+          <h2 data-i18n="animations.title">Custom Animations</h2>
+          <p data-i18n="animations.concept">Toastly animations are designed to be smooth and unobtrusive...</p>
+
+          <h3 data-i18n="animations.presets.title">Animation Presets</h3>
+          <p data-i18n="animations.presets.intro">We provide built-in presets for common use cases:</p>
+          <ul>
+            <li><code>animationPreset: 'slide'</code> - <span data-i18n="animations.presets.slide">Slide (Default)</span></li>
+            <li><code>animationPreset: 'fade'</code> - <span data-i18n="animations.presets.fade">Fade</span></li>
+            <li><code>animationPreset: 'bounce'</code> - <span data-i18n="animations.presets.bounce">Bounce</span></li>
+          </ul>
+
+          <div class="code-block">
+            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            <pre><code class="language-typescript">provideToastly({
+  animationPreset: 'bounce', // 'slide' | 'fade' | 'bounce'
+  position: 'top-right'
+});</code></pre>
+          </div>
+
+          <h3 data-i18n="animations.callback.title">Custom Animations via Callback</h3>
+          <p data-i18n="animations.callback.intro">For full control...</p>
+          <p data-i18n="animations.callback.details">Toastly waits...</p>
+
+          <div class="code-block">
+            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            <pre><code class="language-typescript">provideToastly({
+  animation: {
+    // Called when toast is created
+    enter: (element: HTMLElement) => {
+      // Use Web Animations API
+      element.animate(
+        [
+          { transform: 'translateX(100%)', opacity: 0 },
+          { transform: 'translateX(0)', opacity: 1 }
+        ],
+        { duration: 300, easing: 'ease-out', fill: 'forwards' }
+      );
+    },
+    // Called when toast is dismissed
+    leave: (element: HTMLElement) => {
+      return element.animate(
+        [
+          { opacity: 1 },
+          { opacity: 0, transform: 'scale(0.9)' }
+        ],
+        { duration: 200, easing: 'ease-in', fill: 'forwards' }
+      );
+    }
+  }
+});</code></pre>
+          </div>
+
+          <h3 data-i18n="animations.css.title">Customization with CSS Variables</h3>
+          <p data-i18n="animations.css.intro">You can tweak speed and easing using CSS variables:</p>
+          
+          <div class="code-block">
+            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            <pre><code class="language-css">:root {
+  /* Default: 300ms */
+  --toastly-animation-duration: 500ms;
+  
+  /* Default: cubic-bezier(...) */
+  --toastly-animation-easing: ease-in-out;
+}</code></pre>
+          </div>
+
+          <h3 data-i18n="animations.a11y.title">Accessibility</h3>
+          <div class="tip">
+            <strong data-i18n="animations.a11y.title">Accessibility</strong>
+            <p data-i18n="animations.a11y.intro">Toastly respects prefers-reduced-motion...</p>
+          </div>
+
+          <h3 data-i18n="animations.bestpractices.title">Best Practices</h3>
+          <ul>
+            <li>✅ <span data-i18n="animations.bp.l1">Keep animations short...</span></li>
+            <li>✅ <span data-i18n="animations.bp.l2">Use ease-out...</span></li>
+            <li>❌ <span data-i18n="animations.mistake.l1">Don't use complex animations...</span></li>
+            <li>❌ <span data-i18n="animations.mistake.l2">Don't block dismissal...</span></li>
+          </ul>
+        </section>
+
         <section id="config-global" class="docs-section">
           <h1 data-i18n="config.options.title">Global Configuration</h1>
           <p class="lead" data-i18n="config.global.lead">

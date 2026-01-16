@@ -279,6 +279,27 @@ const I18n = (() => {
       'themes.tip.title': '💡 When to use dark theme?',
       'themes.tip.desc': 'Dark theme is great for important notifications that need to stand out, especially in applications with light backgrounds. It pairs well with toasts that have action buttons.',
 
+      // Animations
+      'animations.title': 'Custom Animations',
+      'animations.concept': 'Toastly animations are designed to be smooth and unobtrusive. While they add visual flair, performance and accessibility are our top priorities. Animations are completely optional and can be fully customized.',
+      'animations.presets.title': 'Animation Presets',
+      'animations.presets.intro': 'We provide minimized presets for common use cases:',
+      'animations.presets.slide': 'Slides in from the edge (Default).',
+      'animations.presets.fade': 'Simple opacity transition.',
+      'animations.presets.bounce': 'Playful bounce effect.',
+      'animations.callback.title': 'Custom Animations via Callback',
+      'animations.callback.intro': 'For full control, you can define a custom object with enter/leave callbacks. This allows you to use the Web Animations API or any animation library.',
+      'animations.callback.details': 'Toastly waits for your animation logic to complete before removing the element from the DOM.',
+      'animations.css.title': 'Customization with CSS Variables',
+      'animations.css.intro': 'You can tweak the duration and easing of built-in animations using CSS variables:',
+      'animations.a11y.title': 'Accessibility',
+      'animations.a11y.intro': 'Toastly respects the user\'s <strong>prefers-reduced-motion</strong> setting. If enabled at the system level, animations are automatically disabled or simplified to ensure a comfortable experience for all users. This behavior is not optional.',
+      'animations.bestpractices.title': 'Best Practices & Common Mistakes',
+      'animations.bp.l1': 'Keep animations short (300-500ms).',
+      'animations.bp.l2': 'Use ease-out for entering and ease-in for leaving.',
+      'animations.mistake.l1': 'Don\'t use complex animations that distract content.',
+      'animations.mistake.l2': 'Don\'t block toast dismissal with long exit animations.',
+
 
       // Position Demo
       'pos.topLeft': '↖️ Top Left',
@@ -616,6 +637,27 @@ const I18n = (() => {
       'themes.compare': 'Comparação',
       'themes.tip.title': '💡 Quando usar o tema dark?',
       'themes.tip.desc': 'O tema escuro é ótimo para notificações importantes que precisam se destacar, especialmente em aplicações com fundo claro. Combina bem com toasts que têm botões de ação.',
+
+      // Animations
+      'animations.title': 'Animações Customizáveis',
+      'animations.concept': 'As animações do Toastly são projetadas para ser fluidas e discretas. Embora adicionem estilo, performance e acessibilidade são prioridades. Elas são opcionais e totalmente customizáveis.',
+      'animations.presets.title': 'Presets de Animação',
+      'animations.presets.intro': 'Fornecemos presets otimizados para casos comuns:',
+      'animations.presets.slide': 'Desliza da borda (Padrão).',
+      'animations.presets.fade': 'Transição simples de opacidade.',
+      'animations.presets.bounce': 'Efeito de pulo divertido.',
+      'animations.callback.title': 'Customização via Callback',
+      'animations.callback.intro': 'Para controle total, defina um objeto com callbacks enter/leave. Isso permite usar Web Animations API ou outras bibliotecas.',
+      'animations.callback.details': 'O Toastly aguarda sua lógica de animação completar antes de remover o elemento do DOM.',
+      'animations.css.title': 'Customização com Variáveis CSS',
+      'animations.css.intro': 'Você pode ajustar duração e curva das animações nativas via CSS:',
+      'animations.a11y.title': 'Acessibilidade',
+      'animations.a11y.intro': 'O Toastly respeita a configuração <strong>prefers-reduced-motion</strong>. Se ativada no sistema, as animações são desabilitadas ou simplificadas para garantir conforto a todos os usuários. Isso não é opcional.',
+      'animations.bestpractices.title': 'Boas Práticas e Erros Comuns',
+      'animations.bp.l1': 'Mantenha animações curtas (300-500ms).',
+      'animations.bp.l2': 'Use ease-out para entrada e ease-in para saída.',
+      'animations.mistake.l1': 'Não use animações complexas que distraiam.',
+      'animations.mistake.l2': 'Não bloqueie o fechamento com animações longas.',
 
 
       // Position Demo
