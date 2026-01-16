@@ -42,6 +42,27 @@ export {
 } from './lib/types/toast-error.type';
 
 // =============================================================================
+// ANIMATION TYPES
+// =============================================================================
+
+export type {
+  AnimationPreset,
+  AnimationDirection,
+  CustomAnimation,
+  AnimationConfig,
+} from './lib/animations/animation.types';
+
+export {
+  ANIMATION_DEFAULT_DURATION_MS,
+  ANIMATION_DEFAULT_EASING,
+  CSS_VAR_ANIMATION_DURATION,
+  CSS_VAR_ANIMATION_EASING,
+  DEFAULT_ANIMATION_PRESET,
+} from './lib/animations/animation.constants';
+
+export { AnimationService } from './lib/animations/animation.service';
+
+// =============================================================================
 // CONSTANTS
 // =============================================================================
 
@@ -71,3 +92,4 @@ export { ToastService } from './lib/services/toast.service';
 
 export { ToastContainerComponent } from './lib/components/toast-container/toast-container.component';
 export { ToastItemComponent } from './lib/components/toast-item/toast-item.component';
+

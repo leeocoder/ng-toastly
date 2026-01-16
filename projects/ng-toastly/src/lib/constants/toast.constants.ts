@@ -96,6 +96,7 @@ export const DEFAULT_TOAST_CONFIG: ToastGlobalConfig = {
   pauseOnHover: true,
   dismissibleByDefault: true,
   defaultType: 'info',
+  animationPreset: 'slide',
 };
 
 // ============================================================================

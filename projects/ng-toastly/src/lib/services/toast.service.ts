@@ -90,6 +90,16 @@ export class ToastService {
    */
   readonly pauseOnHover = computed(() => this.globalConfig.pauseOnHover);
 
+  /**
+   * Animation preset to use for toasts.
+   */
+  readonly animationPreset = computed(() => this.globalConfig.animationPreset);
+
+  /**
+   * Custom animation callbacks if provided.
+   */
+  readonly customAnimation = computed(() => this.globalConfig.animation);
+
   constructor() {
     // Merge provided config with defaults
     const providedConfig = inject(TOAST_GLOBAL_CONFIG, { optional: true });

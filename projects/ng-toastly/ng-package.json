@@ -5,8 +5,20 @@
     "entryFile": "src/public-api.ts"
   },
   "assets": [
-    "schematics/**/*.json",
-    "schematics/**/*.js",
-    "schematics/**/*.d.ts"
+    {
+      "input": "schematics",
+      "glob": "**/*.json",
+      "output": "schematics"
+    },
+    {
+      "input": "schematics",
+      "glob": "**/*.js",
+      "output": "schematics"
+    },
+    {
+      "input": "schematics", 
+      "glob": "**/*.d.ts",
+      "output": "schematics"
+    }
   ]
 }

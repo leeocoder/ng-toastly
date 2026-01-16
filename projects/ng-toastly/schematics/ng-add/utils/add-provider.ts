@@ -59,11 +59,17 @@ function addProviderToStandalone(
 
   // Check if already imported
   if (text.includes('provideToastly')) {
-    return; // Already configured, skip
+    return;
   }
 
+  // Check if needs animations
+  const needsAnimations = !text.includes('provideAnimations');
+
   // Add import statement
-  const importStatement = `import { provideToastly } from 'ng-toastly';\n`;
+  let importStatement = `import { provideToastly } from 'ng-toastly';\n`;
+  if (needsAnimations) {
+    importStatement += `import { provideAnimations } from '@angular/platform-browser/animations';\n`;
+  }
 
   // Find the last import statement and add after it
   const lastImportIndex = findLastImportIndex(text);
@@ -74,10 +80,14 @@ function addProviderToStandalone(
   }
 
   // Add provider to providers array
-  const providerCode = `provideToastly({ position: '${position}' })`;
+  let providerCode = `provideToastly({ position: '${position}' })`;
+  if (needsAnimations) {
+    providerCode += `,\n    provideAnimations()`;
+  }
+  
   text = addToProvidersArray(text, providerCode);
 
-  tree.overwrite(configPath, text);
+  tree.overwrite(configPath!, text);
 }
 
 /**
