@@ -4,6 +4,7 @@
 
 import { InjectionToken } from '@angular/core';
 import { ToastPosition, ToastTheme, ToastType } from './toast.type';
+import { AnimationPreset, CustomAnimation } from '../animations/animation.types';
 
 /**
  * Global configuration for the Toastly notification system.
@@ -26,6 +27,10 @@ export interface ToastGlobalConfig {
   readonly dismissibleByDefault: boolean;
   /** Default type for toasts when not specified */
   readonly defaultType: ToastType;
+  /** Animation preset to use for enter/leave transitions */
+  readonly animationPreset: AnimationPreset;
+  /** Custom animation callbacks (overrides animationPreset) */
+  readonly animation?: CustomAnimation;
 }
 
 /**

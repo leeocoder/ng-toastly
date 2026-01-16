@@ -71,6 +71,7 @@
             <h3 data-i18n="start.badge">Getting Started</h3>
             <ul>
               <li><a href="#instalacao" data-i18n="footer.installation">Installation</a></li>
+              <li><a href="#ng-add" data-i18n="ngadd.title">ng add (Recommended)</a></li>
               <li><a href="#primeiro-toast" data-i18n="start.step3.title">Your First Toast</a></li>
             </ul>
           </div>
@@ -90,6 +91,7 @@
               <li><a href="#classes-css" data-i18n="features.customizable.title">Custom CSS</a></li>
               <li><a href="#icones" data-i18n="icons.title">Custom Icons</a></li>
               <li><a href="#temas" data-i18n="themes.title">Themes</a></li>
+              <li><a href="#animations" data-i18n="animations.title">Custom Animations</a></li>
             </ul>
           </div>
           <div class="sidebar-section">
@@ -170,6 +172,114 @@
           <div class="success-box">
             <p data-i18n="start.step3.note">🎉 Done!</p>
           </div>
+        </section>
+
+        <!-- ng add Section -->
+        <section id="ng-add" class="docs-section">
+          <h1 data-i18n="ngadd.title">Automatic Setup with ng add</h1>
+          <p class="lead" data-i18n="ngadd.intro">
+            The fastest way to add ng-toastly to your project.
+          </p>
+
+          <!-- What is ng add -->
+          <h2 data-i18n="ngadd.what.title">What is ng add?</h2>
+          <p data-i18n="ngadd.what.p1">
+            <code>ng add</code> is an official Angular CLI command that allows libraries to automatically configure your project.
+          </p>
+          <p data-i18n="ngadd.what.p2">
+            ng-toastly uses this feature to save you time and prevent common setup mistakes.
+          </p>
+
+          <!-- How to Use -->
+          <h2 data-i18n="ngadd.how.title">How to Use</h2>
+          <p data-i18n="ngadd.how.command">Simply run this command in your Angular project:</p>
+          <div class="code-block">
+            <div class="code-header">
+              <span>Terminal</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code>ng add ng-toastly</code></pre>
+          </div>
+
+          <div class="info-box info-box-tip">
+            <p data-i18n="ngadd.how.safe">✅ Safe to run: This command only adds what's needed.</p>
+            <p data-i18n="ngadd.how.once">✅ Run once: If you run it again, it will skip what's already configured.</p>
+          </div>
+
+          <!-- What Gets Configured -->
+          <h2 data-i18n="ngadd.configures.title">What Gets Configured</h2>
+          <p data-i18n="ngadd.configures.intro">The schematic automatically:</p>
+          <ul class="feature-list">
+            <li data-i18n="ngadd.configures.item1">✅ Adds provideToastly() to your app configuration</li>
+            <li data-i18n="ngadd.configures.item2">✅ Adds toastly-container to your AppComponent</li>
+            <li data-i18n="ngadd.configures.item3">✅ Detects if your project uses standalone or NgModule</li>
+            <li data-i18n="ngadd.configures.item4">✅ Avoids duplicating code if already configured</li>
+            <li data-i18n="ngadd.configures.item5">✅ Shows clear messages about what was changed</li>
+          </ul>
+
+          <!-- What It Does NOT Do -->
+          <h2 data-i18n="ngadd.notdo.title">What It Does NOT Do</h2>
+          <p data-i18n="ngadd.notdo.intro">By design, the schematic does not:</p>
+          <ul class="feature-list">
+            <li data-i18n="ngadd.notdo.item1">❌ Set a specific theme (light/dark)</li>
+            <li data-i18n="ngadd.notdo.item2">❌ Configure language or i18n</li>
+            <li data-i18n="ngadd.notdo.item3">❌ Modify your app's styles or layout</li>
+            <li data-i18n="ngadd.notdo.item4">❌ Add unnecessary dependencies</li>
+          </ul>
+          <div class="info-box info-box-why">
+            <p data-i18n="ngadd.notdo.why"><strong>Why?</strong> These decisions belong to your application, not to the library.</p>
+          </div>
+
+          <!-- Why Use a Schematic -->
+          <h2 data-i18n="ngadd.why.title">Why Use a Schematic?</h2>
+          <ul class="feature-list">
+            <li data-i18n="ngadd.why.item1"><strong>Reduces setup time</strong> — No manual file editing required</li>
+            <li data-i18n="ngadd.why.item2"><strong>Prevents mistakes</strong> — Correct configuration every time</li>
+            <li data-i18n="ngadd.why.item3"><strong>Improves DX</strong> — Better developer experience from the start</li>
+            <li data-i18n="ngadd.why.item4"><strong>Keeps code clean</strong> — Adds only what's necessary</li>
+          </ul>
+
+          <!-- Safety -->
+          <h2 data-i18n="ngadd.safe.title">Safety & Best Practices</h2>
+          <ul class="feature-list">
+            <li data-i18n="ngadd.safe.item1">🔒 <strong>Idempotent:</strong> Running twice won't duplicate anything</li>
+            <li data-i18n="ngadd.safe.item2">🔍 <strong>Respects structure:</strong> Works with your existing setup</li>
+            <li data-i18n="ngadd.safe.item3">📝 <strong>Clear feedback:</strong> Terminal messages explain what changed</li>
+          </ul>
+
+          <!-- Options -->
+          <h2 data-i18n="ngadd.options.title">Available Options</h2>
+          <p data-i18n="ngadd.options.intro">You can customize the schematic with options:</p>
+          <div class="code-block">
+            <div class="code-header">
+              <span>Terminal</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-comment"># Set default position</span>
+ng add ng-toastly --position=top-right
+
+<span class="code-comment"># Skip container (add manually)</span>
+ng add ng-toastly --skipContainer</code></pre>
+          </div>
+
+          <table class="options-table">
+            <thead>
+              <tr>
+                <th>Option</th>
+                <th data-i18n="types.table.description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>--position</code></td>
+                <td data-i18n="ngadd.options.position">Set default toast position</td>
+              </tr>
+              <tr>
+                <td><code>--skipContainer</code></td>
+                <td data-i18n="ngadd.options.skipContainer">Skip adding the container</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <!-- First Toast -->
@@ -462,6 +572,43 @@
           </div>
         </section>
 
+        <!-- Custom CSS Classes -->
+        <section id="classes-css" class="docs-section">
+          <h1 data-i18n="customcss.title">Custom CSS Classes</h1>
+          <p class="lead" data-i18n="customcss.intro">For granular control, apply custom CSS classes.</p>
+
+          <h3 data-i18n="customcss.step1">1. Define your class in global styles:</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <span>styles.css</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code class="language-css">.my-gold-toast {
+  /* Override variables or properties */
+  --toastly-bg: #ffd700;
+  --toastly-text: #000000;
+  border: 2px solid #b8860b;
+  font-weight: bold;
+}</code></pre>
+          </div>
+
+          <h3 data-i18n="customcss.step2">2. Use the class when showing a toast:</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <span>component.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code class="language-typescript">this.toastService.show({
+  message: 'You won a prize! 🏆',
+  styleClass: 'my-gold-toast'
+});</code></pre>
+          </div>
+
+          <div class="info-box info-box-tip">
+            <p data-i18n="customcss.tip">Note: Use styles.css or ::ng-deep.</p>
+          </div>
+        </section>
+
         <!-- Custom Icons -->
         <section id="icones" class="docs-section">
           <h1 data-i18n="icons.title">Custom Icons</h1>
@@ -563,6 +710,89 @@
         </section>
 
         <!-- Global Config -->
+        <!-- Animations -->
+        <section id="animations" class="docs-section">
+          <h2 data-i18n="animations.title">Custom Animations</h2>
+          <p data-i18n="animations.concept">Toastly animations are designed to be smooth and unobtrusive...</p>
+
+          <h3 data-i18n="animations.presets.title">Animation Presets</h3>
+          <p data-i18n="animations.presets.intro">We provide built-in presets for common use cases:</p>
+          <ul>
+            <li><code>animationPreset: 'slide'</code> - <span data-i18n="animations.presets.slide">Slide (Default)</span></li>
+            <li><code>animationPreset: 'fade'</code> - <span data-i18n="animations.presets.fade">Fade</span></li>
+            <li><code>animationPreset: 'bounce'</code> - <span data-i18n="animations.presets.bounce">Bounce</span></li>
+          </ul>
+
+          <div class="code-block">
+            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            <pre><code class="language-typescript">provideToastly({
+  animationPreset: 'bounce', // 'slide' | 'fade' | 'bounce'
+  position: 'top-right'
+});</code></pre>
+          </div>
+
+          <h3 data-i18n="animations.callback.title">Custom Animations via Callback</h3>
+          <p data-i18n="animations.callback.intro">For full control...</p>
+          <p data-i18n="animations.callback.details">Toastly waits...</p>
+
+          <div class="code-block">
+            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            <pre><code class="language-typescript">provideToastly({
+  animation: {
+    // Called when toast is created
+    enter: (element: HTMLElement) => {
+      // Use Web Animations API
+      element.animate(
+        [
+          { transform: 'translateX(100%)', opacity: 0 },
+          { transform: 'translateX(0)', opacity: 1 }
+        ],
+        { duration: 300, easing: 'ease-out', fill: 'forwards' }
+      );
+    },
+    // Called when toast is dismissed
+    leave: (element: HTMLElement) => {
+      return element.animate(
+        [
+          { opacity: 1 },
+          { opacity: 0, transform: 'scale(0.9)' }
+        ],
+        { duration: 200, easing: 'ease-in', fill: 'forwards' }
+      );
+    }
+  }
+});</code></pre>
+          </div>
+
+          <h3 data-i18n="animations.css.title">Customization with CSS Variables</h3>
+          <p data-i18n="animations.css.intro">You can tweak speed and easing using CSS variables:</p>
+          
+          <div class="code-block">
+            <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            <pre><code class="language-css">:root {
+  /* Default: 300ms */
+  --toastly-animation-duration: 500ms;
+  
+  /* Default: cubic-bezier(...) */
+  --toastly-animation-easing: ease-in-out;
+}</code></pre>
+          </div>
+
+          <h3 data-i18n="animations.a11y.title">Accessibility</h3>
+          <div class="tip">
+            <strong data-i18n="animations.a11y.title">Accessibility</strong>
+            <p data-i18n="animations.a11y.intro">Toastly respects prefers-reduced-motion...</p>
+          </div>
+
+          <h3 data-i18n="animations.bestpractices.title">Best Practices</h3>
+          <ul>
+            <li>✅ <span data-i18n="animations.bp.l1">Keep animations short...</span></li>
+            <li>✅ <span data-i18n="animations.bp.l2">Use ease-out...</span></li>
+            <li>❌ <span data-i18n="animations.mistake.l1">Don't use complex animations...</span></li>
+            <li>❌ <span data-i18n="animations.mistake.l2">Don't block dismissal...</span></li>
+          </ul>
+        </section>
+
         <section id="config-global" class="docs-section">
           <h1 data-i18n="config.options.title">Global Configuration</h1>
           <p class="lead" data-i18n="config.global.lead">

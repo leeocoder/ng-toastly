@@ -3,5 +3,22 @@
   "dest": "../../dist/ng-toastly",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    {
+      "input": "schematics",
+      "glob": "**/*.json",
+      "output": "schematics"
+    },
+    {
+      "input": "schematics",
+      "glob": "**/*.js",
+      "output": "schematics"
+    },
+    {
+      "input": "schematics", 
+      "glob": "**/*.d.ts",
+      "output": "schematics"
+    }
+  ]
 }

@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "NgToastlyNgAddSchema",
+  "title": "ng-toastly ng-add schematic",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project to add ng-toastly to.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "position": {
+      "type": "string",
+      "description": "Default position for toasts.",
+      "default": "bottom-right",
+      "enum": [
+        "top-left",
+        "top-center",
+        "top-right",
+        "bottom-left",
+        "bottom-center",
+        "bottom-right"
+      ]
+    },
+    "skipContainer": {
+      "type": "boolean",
+      "description": "Skip adding the ToastContainerComponent to AppComponent.",
+      "default": false
+    }
+  },
+  "required": []
+}
