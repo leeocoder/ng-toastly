@@ -772,10 +772,13 @@ ng add ng-toastly --skipContainer</code></pre>
           </ul>
 
           <div class="code-block">
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
-            <pre><code class="language-typescript">provideToastly({
-  animationPreset: 'bounce', // 'slide' | 'fade' | 'bounce'
-  position: 'top-right'
+            <div class="code-header">
+              <span>app.config.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-function">provideToastly</span>({
+  animationPreset: <span class="code-string">'bounce'</span>, <span class="code-comment">// 'slide' | 'fade' | 'bounce'</span>
+  position: <span class="code-string">'top-right'</span>
 });</code></pre>
           </div>
 
@@ -784,28 +787,31 @@ ng add ng-toastly --skipContainer</code></pre>
           <p data-i18n="animations.callback.details">Toastly waits...</p>
 
           <div class="code-block">
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
-            <pre><code class="language-typescript">provideToastly({
+            <div class="code-header">
+              <span>app.config.ts</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code><span class="code-function">provideToastly</span>({
   animation: {
-    // Called when toast is created
-    enter: (element: HTMLElement) => {
-      // Use Web Animations API
-      element.animate(
+    <span class="code-comment">// Called when toast is created</span>
+    enter: (element: <span class="code-class">HTMLElement</span>) => {
+      <span class="code-comment">// Use Web Animations API</span>
+      element.<span class="code-function">animate</span>(
         [
-          { transform: 'translateX(100%)', opacity: 0 },
-          { transform: 'translateX(0)', opacity: 1 }
+          { transform: <span class="code-string">'translateX(100%)'</span>, opacity: <span class="code-number">0</span> },
+          { transform: <span class="code-string">'translateX(0)'</span>, opacity: <span class="code-number">1</span> }
         ],
-        { duration: 300, easing: 'ease-out', fill: 'forwards' }
+        { duration: <span class="code-number">300</span>, easing: <span class="code-string">'ease-out'</span>, fill: <span class="code-string">'forwards'</span> }
       );
     },
-    // Called when toast is dismissed
-    leave: (element: HTMLElement) => {
-      return element.animate(
+    <span class="code-comment">// Called when toast is dismissed</span>
+    leave: (element: <span class="code-class">HTMLElement</span>) => {
+      <span class="code-keyword">return</span> element.<span class="code-function">animate</span>(
         [
-          { opacity: 1 },
-          { opacity: 0, transform: 'scale(0.9)' }
+          { opacity: <span class="code-number">1</span> },
+          { opacity: <span class="code-number">0</span>, transform: <span class="code-string">'scale(0.9)'</span> }
         ],
-        { duration: 200, easing: 'ease-in', fill: 'forwards' }
+        { duration: <span class="code-number">200</span>, easing: <span class="code-string">'ease-in'</span>, fill: <span class="code-string">'forwards'</span> }
       );
     }
   }
@@ -818,12 +824,15 @@ ng add ng-toastly --skipContainer</code></pre>
           </p>
 
           <div class="code-block">
-            <button class="copy-btn" data-i18n="common.copy">Copy</button>
-            <pre><code class="language-css">:root {
-  /* Default: 300ms */
-  --toastly-animation-duration: 500ms;
+            <div class="code-header">
+              <span>styles.css</span>
+              <button class="copy-btn" data-i18n="common.copy">Copy</button>
+            </div>
+            <pre><code>:root {
+  <span class="code-comment">/* Default: 300ms */</span>
+  --toastly-animation-duration: <span class="code-number">500ms</span>;
   
-  /* Default: cubic-bezier(...) */
+  <span class="code-comment">/* Default: cubic-bezier(...) */</span>
   --toastly-animation-easing: ease-in-out;
 }</code></pre>
           </div>
